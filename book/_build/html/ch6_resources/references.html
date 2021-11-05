@@ -1,0 +1,690 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>References &#8212; Tempo, Beat and Downbeat Estimation</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Acknowledgments" href="acknowledgments.html" />
+    <link rel="prev" title="Resources and relevant projects" href="resources.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Tempo, Beat and Downbeat Estimation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Tempo, Beat, and Downbeat Estimation
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1_intro/tutorial_structure.html">
+   Tutorial Structure and Setup
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1_intro/tutorial_scope.html">
+   Tutorial scope and prerequisites
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Basics of tempo, beat, and downbeat
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2_basics/definition.html">
+   Definition by sound example
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2_basics/annotation.html">
+   How do we annotate?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2_basics/baseline.html">
+   Baseline approach
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2_basics/evaluate.html">
+   How do we evaluate?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2_basics/perspectives.html">
+   Perspectives
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Going deep: theoretical underpinnings
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3_going_deep/overview.html">
+   Deep learning approaches
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3_going_deep/dnns.html">
+   Recurrent approaches: RNNs, LSTMs, and GRUs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3_going_deep/postprocessing.html">
+   Post-processing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3_going_deep/design_decisions.html">
+   Design decisions for tempo, beat, and downbeat
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3_going_deep/table.html">
+   Reference works
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Going deeper: practial examples
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4_going_deeper/loading_a_dataset.html">
+   Loading a dataset with mir-data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4_going_deeper/encoding_targets.html">
+   Encoding the target representations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4_going_deeper/creating_splits.html">
+   Creating splits for the dataset
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4_going_deeper/building_tcn_models.html">
+   Building individual TCN models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4_going_deeper/training_tcns.html">
+   Training the TCNs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4_going_deeper/model_prediction.html">
+   Model prediction and inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4_going_deeper/evaluation.html">
+   Evaluation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4_going_deeper/multitask.html">
+   Multi-task formulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4_going_deeper/fine_tuning.html">
+   Fine-tuning
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Discussion and conclusions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch5_discussion/recap.html">
+   Recap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch5_discussion/real_world_limitations.html">
+   Real world limitations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch5_discussion/open_challenges.html">
+   Open challenges
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="resources.html">
+   Resources and relevant projects
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="acknowledgments.html">
+   Acknowledgments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="authors.html">
+   About the Authors
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/ch6_resources/references.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/magdalenafuentes/rhythm_tutorial"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/magdalenafuentes/rhythm_tutorial/issues/new?title=Issue%20on%20page%20%2Fch6_resources/references.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="references">
+<h1>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
+<p id="id1"><dl class="citation">
+<dt class="label" id="id205"><span class="brackets">AAB+15</span></dt>
+<dd><p>Mart\'ın Abadi, Ashish Agarwal, Paul Barham, Eugene Brevdo, Zhifeng Chen, Craig Citro, Greg S. Corrado, Andy Davis, Jeffrey Dean, Matthieu Devin, Sanjay Ghemawat, Ian Goodfellow, Andrew Harp, Geoffrey Irving, Michael Isard, Yangqing Jia, Rafal Jozefowicz, Lukasz Kaiser, Manjunath Kudlur, Josh Levenberg, Dandelion Mané, Rajat Monga, Sherry Moore, Derek Murray, Chris Olah, Mike Schuster, Jonathon Shlens, Benoit Steiner, Ilya Sutskever, Kunal Talwar, Paul Tucker, Vincent Vanhoucke, Vijay Vasudevan, Fernanda Viégas, Oriol Vinyals, Pete Warden, Martin Wattenberg, Martin Wicke, Yuan Yu, and Xiaoqiang Zheng. TensorFlow: large-scale machine learning on heterogeneous systems. 2015. Software available from tensorflow.org. URL: <a class="reference external" href="https://www.tensorflow.org/">https://www.tensorflow.org/</a>.</p>
+</dd>
+<dt class="label" id="id236"><span class="brackets">ATHJ21</span></dt>
+<dd><p>Manuel Anglada-Tort, Peter MC Harrison, and Nori Jacoby. Repp: a robust cross-platform solution for online sensorimotor synchronization experiments. <em>bioRxiv</em>, 2021.</p>
+</dd>
+<dt class="label" id="id149"><span class="brackets">Bot91</span></dt>
+<dd><p>Léon Bottou. Stochastic gradient learning in neural networks. <em>Proceedings of Neuro-Nımes</em>, 91(8):12, 1991.</p>
+</dd>
+<dt class="label" id="id62"><span class="brackets">BockKW14a</span></dt>
+<dd><p>S. Böck, F. Krebs, and G. Widmer. A Multi-model Approach to Beat Tracking Considering Heterogeneous Music Styles. In <em>15th Conf. of the Int. Soc. for Music Information Retrieval (ISMIR 2014)</em>, 603–608. Taipei, Taiwan, October 2014.</p>
+</dd>
+<dt class="label" id="id5"><span class="brackets">BockD20</span></dt>
+<dd><p>Sebastian Böck and Matthew EP Davies. Deconstruct, analyse, reconstruct: how to improve tempo, beat, and downbeat estimation. <em>Proc. of ISMIR (International Society for Music Information Retrieval). Montreal, Canada</em>, pages 574–582, 2020.</p>
+</dd>
+<dt class="label" id="id4"><span class="brackets">BockDK19</span></dt>
+<dd><p>Sebastian Böck, Matthew EP Davies, and Peter Knees. Multi-task learning of tempo and beat: learning one to improve the other. In <em>ISMIR</em>, 486–493. 2019.</p>
+</dd>
+<dt class="label" id="id240"><span class="brackets">BockKW14b</span></dt>
+<dd><p>Sebastian Böck, Florian Krebs, and Gerhard Widmer. A multi-model approach to beat tracking considering heterogeneous music styles. In <em>Proc. of the 15th Intl. Society for Music Information Retrieval Conf. (ISMIR)</em>, 603–608. Taiwan, Tapei, 2014.</p>
+</dd>
+<dt class="label" id="id214"><span class="brackets">BockS11</span></dt>
+<dd><p>Sebastian Böck and Markus Schedl. Enhanced beat tracking with context-aware neural networks. In <em>Proc. Int. Conf. Digital Audio Effects</em>, 135–139. 2011.</p>
+</dd>
+<dt class="label" id="id213"><span class="brackets">BockKW16</span></dt>
+<dd><p>S. Böck, F. Krebs, and G. Widmer. Joint beat and downbeat tracking with recurrent neural networks. In <em>17th International Society for Music Information Retrieval Conference (ISMIR)</em>. 2016.</p>
+</dd>
+<dt class="label" id="id226"><span class="brackets">CFG18</span></dt>
+<dd><p>Tian Cheng, Satoru Fukayama, and Masataka Goto. Convolving gaussian kernels for rnn-based beat tracking. In <em>2018 26th European Signal Processing Conference (EUSIPCO)</em>, 1905–1909. IEEE, 2018.</p>
+</dd>
+<dt class="label" id="id221"><span class="brackets">CFCS17</span></dt>
+<dd><p>Keunwoo Choi, György Fazekas, Kyunghyun Cho, and Mark Sandler. A tutorial on deep learning for music information retrieval. <em>arXiv preprint arXiv:1709.04396</em>, 2017.</p>
+</dd>
+<dt class="label" id="id142"><span class="brackets">C+15</span></dt>
+<dd><p>François Chollet and others. Keras. <span><a class="reference external" href="#"></a></span>https://keras.io, 2015.</p>
+</dd>
+<dt class="label" id="id180"><span class="brackets">DRuaP+12</span></dt>
+<dd><p>Norberto Degara, Enrique Argones Rúa, Antonio Pena, Soledad Torres-Guijarro, Matthew EP Davies, and Mark D Plumbley. Reliability-informed beat tracking of musical signals. <em>IEEE Transactions on Audio, Speech, and Language Processing</em>, 20(1):290–301, 2012.</p>
+</dd>
+<dt class="label" id="id234"><span class="brackets">DSdHMuller19</span></dt>
+<dd><p>Jonathan Driedger, Hendrik Schreiber, W. Bas de Haas, and Meinard Müller. Towards automatically correcting tapped beat annotations for music recordings. In <em>Proceedings of the 20th International Society for Music Information Retrieval Conference (ISMIR)</em>. Delft, The Netherlands, November 2019.</p>
+</dd>
+<dt class="label" id="id10"><span class="brackets">DBDR15</span></dt>
+<dd><p>S. Durand, J. P. Bello, B. David, and G. Richard. Downbeat tracking with multiple features and deep neural networks. In <em>2015 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)</em>, volume. 2015. <a class="reference external" href="https://doi.org/10.1109/ICASSP.2015.7178001">doi:10.1109/ICASSP.2015.7178001</a>.</p>
+</dd>
+<dt class="label" id="id59"><span class="brackets">DBDR16</span></dt>
+<dd><p>S. Durand, J. P. Bello, B. David, and G. Richard. Feature adapted convolutional neural networks for downbeat tracking. In <em>IEEE Int. Conf. on Acoustics, Speech and Signal Processing (ICASSP)</em>. 2016.</p>
+</dd>
+<dt class="label" id="id64"><span class="brackets">DBDR17</span></dt>
+<dd><p>S. Durand, J. P. Bello, B. David, and G. Richard. Robust Downbeat Tracking Using an Ensemble of Convolutional Networks. <em>IEEE/ACM Trans. on Audio, Speech, and Language Processing</em>, 25(1):76–89, January 2017.</p>
+</dd>
+<dt class="label" id="id63"><span class="brackets">DE16</span></dt>
+<dd><p>S. Durand and S. Essid. Downbeat Detection With Conditional Random Fields And Deep Learned Features. In <em>17th Int. Soc. for Music Information Retrieval Conf. (ISMIR 2016)</em>, 386–392. New York, USA, August 2016.</p>
+</dd>
+<dt class="label" id="id200"><span class="brackets">DDR14</span></dt>
+<dd><p>Simon Durand, Bertrand David, and Gaël Richard. Enhancing downbeat detection when facing different music styles. In <em>2014 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)</em>, 3132–3136. IEEE, 2014.</p>
+</dd>
+<dt class="label" id="id242"><span class="brackets">Ell07</span></dt>
+<dd><p>Daniel PW Ellis. Beat tracking by dynamic programming. <em>Journal of New Music Research</em>, 36(1):51–60, 2007.</p>
+</dd>
+<dt class="label" id="id28"><span class="brackets">FJDE15</span></dt>
+<dd><p>T. Fillon, C. Joder, S. Durand, and S. Essid. A conditional random field system for beat tracking. In <em>IEEE Int. Conf. on Acoustics, Speech and Signal Processing (ICASSP)</em>, 424–428. South Brisbane, Australia, April 2015.</p>
+</dd>
+<dt class="label" id="id7"><span class="brackets">FMR+19</span></dt>
+<dd><p>M. Fuentes, L. S. Maia, M. Rocamora, L. W. P. Biscainho, H. C. Crayencour, S. Essid, and J. P. Bello. Tracking beats and microtiming in afro-latin american music using conditional random fields and deep learning. In <em>20th International Society for Music Information Retrieval Conference</em>, ISMIR. 2019.</p>
+</dd>
+<dt class="label" id="id30"><span class="brackets">FMC+19</span></dt>
+<dd><p>M. Fuentes, B. McFee, H.C. Crayencour, S. Essid, and J.P. Bello. A music structure informed downbeat tracking system using skip-chain conditional random fields and deep learning. In <em>44th Int. Conf. on Acoustics, Speech, and Signal Processing (ICASSP)</em>, 481–485. Brighton, UK, May 2019.</p>
+</dd>
+<dt class="label" id="id8"><span class="brackets">FMC+18</span></dt>
+<dd><p>Magdalena Fuentes, Brian McFee, Hélène Crayencour, Slim Essid, and Juan Bello. Analysis of common design choices in deep learning systems for downbeat tracking. In <em>The 19th International Society for Music Information Retrieval Conference</em>. 2018.</p>
+</dd>
+<dt class="label" id="id220"><span class="brackets">GBC16</span></dt>
+<dd><p>Ian Goodfellow, Yoshua Bengio, and Aaron Courville. <em>Deep learning</em>. MIT press, 2016.</p>
+</dd>
+<dt class="label" id="id243"><span class="brackets">Got01</span></dt>
+<dd><p>Masataka Goto. An audio-based real-time beat tracking system for music with or without drum-sounds. <em>Journal of New Music Research</em>, 30(2):159–171, 2001.</p>
+</dd>
+<dt class="label" id="id233"><span class="brackets">GTH19</span></dt>
+<dd><p>Alexander Greaves-Tunnell and Zaid Harchaoui. A statistical investigation of long memory in language and music. <em>arXiv preprint arXiv:1904.03834</em>, 2019.</p>
+</dd>
+<dt class="label" id="id15"><span class="brackets">GSKoutnik+16</span></dt>
+<dd><p>Klaus Greff, Rupesh K Srivastava, Jan Koutník, Bas R Steunebrink, and Jürgen Schmidhuber. Lstm: a search space odyssey. <em>IEEE transactions on neural networks and learning systems</em>, 28(10):2222–2232, 2016.</p>
+</dd>
+<dt class="label" id="id160"><span class="brackets">HM04</span></dt>
+<dd><p>Stephen W Hainsworth and Malcolm D Macleod. Particle filtering applied to musical tempo tracking. <em>EURASIP Journal on Advances in Signal Processing</em>, 2004(15):927847, 2004.</p>
+</dd>
+<dt class="label" id="id158"><span class="brackets">HZCPerpinan04</span></dt>
+<dd><p>Xuming He, Richard S Zemel, and Miguel Á Carreira-Perpiñán. Multiscale conditional random fields for image labeling. In <em>Proceedings of the 2004 IEEE Computer Society Conference on Computer Vision and Pattern Recognition, 2004. CVPR 2004.</em>, volume 2, II–II. IEEE, 2004.</p>
+</dd>
+<dt class="label" id="id187"><span class="brackets">HDF12</span></dt>
+<dd><p>Jason Hockman, Matthew EP Davies, and Ichiro Fujinaga. One in the jungle: downbeat detection in hardcore, jungle, and drum and bass. In <em>ISMIR</em>, 169–174. 2012.</p>
+</dd>
+<dt class="label" id="id32"><span class="brackets">HKS14</span></dt>
+<dd><p>A. Holzapfel, F. Krebs, and A. Srinivasamurthy. Tracking the 'odd': meter inference in a culturally diverse music corpus. In <em>15th Int. Society for Music Information Retrieval Conf. (ISMIR)</em>, 425–430. Taipei, Taiwan, October 2014.</p>
+</dd>
+<dt class="label" id="id210"><span class="brackets">HG16</span></dt>
+<dd><p>Andre Holzapfel and Thomas Grill. Bayesian meter tracking on learned signal representations. In <em>ISMIR-International Conference on Music Information Retrieval</em>, 262–268. ISMIR, 2016.</p>
+</dd>
+<dt class="label" id="id237"><span class="brackets">HDZ+12</span></dt>
+<dd><p>André Holzapfel, Matthew E. P. Davies, José R. Zapata, João Lobato Oliveira, and Fabien Gouyon. Selective sampling for beat tracking evaluation. <em>IEEE Transactions on Audio, Speech, and Language Processing</em>, 20(9):2539–2548, 2012. <a class="reference external" href="https://doi.org/10.1109/TASL.2012.2205244">doi:10.1109/TASL.2012.2205244</a>.</p>
+</dd>
+<dt class="label" id="id19"><span class="brackets">IS15</span></dt>
+<dd><p>S. Ioffe and C. Szegedy. Batch normalization: accelerating deep network training by reducing internal covariate shift. In <em>32nd International Conference on Machine Learning (ICML)</em>. 2015.</p>
+</dd>
+<dt class="label" id="id230"><span class="brackets">JLL19</span></dt>
+<dd><p>Bijue Jia, Jiancheng Lv, and Dayiheng Liu. Deep learning-based automatic downbeat tracking: a brief review. <em>Multimedia Systems</em>, pages 1–22, 2019.</p>
+</dd>
+<dt class="label" id="id14"><span class="brackets">JZS15</span></dt>
+<dd><p>Rafal Jozefowicz, Wojciech Zaremba, and Ilya Sutskever. An empirical exploration of recurrent network architectures. In <em>International Conference on Machine Learning</em>, 2342–2350. 2015.</p>
+</dd>
+<dt class="label" id="id188"><span class="brackets">KFRO12</span></dt>
+<dd><p>Maksim Khadkevich, Thomas Fillon, Gaël Richard, and Maurizio Omologo. A probabilistic approach to simultaneous extraction of beats and downbeats. In <em>2012 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)</em>, 445–448. IEEE, 2012.</p>
+</dd>
+<dt class="label" id="id16"><span class="brackets">KB14</span></dt>
+<dd><p>D. Kingma and J. Ba. Adam: a method for stochastic optimization. <em>arXiv preprint arXiv:1412.6980</em>, 2014.</p>
+</dd>
+<dt class="label" id="id244"><span class="brackets">KEA06</span></dt>
+<dd><p>A.P. Klapuri, A.J. Eronen, and J.T. Astola. Analysis of the meter of acoustic musical signals. <em>IEEE Transactions on Audio, Speech, and Language Processing</em>, 14(1):342–355, 2006. <a class="reference external" href="https://doi.org/10.1109/TSA.2005.854090">doi:10.1109/TSA.2005.854090</a>.</p>
+</dd>
+<dt class="label" id="id235"><span class="brackets">KFH+15</span></dt>
+<dd><p>Peter Knees, Angel Faraldo, Perfecto Herrera, Richard Vogl, Sebastian Böck, Florian Hörschläger, and Mickael Le Goff. Two data sets for tempo estimation and key detection in electronic dance music annotated from user corrections. In <em>Proc. of the 16th Intl. Society for Music Information Retrieval Conf. (ISMIR)</em>, 364–370. 2015.</p>
+</dd>
+<dt class="label" id="id201"><span class="brackets">KBockW14</span></dt>
+<dd><p>Filip Korzeniowski, Sebastian Böck, and Gerhard Widmer. Probabilistic extraction of beat positions from a beat activation function. In <em>ISMIR</em>, 513–518. 2014.</p>
+</dd>
+<dt class="label" id="id18"><span class="brackets">KBockW11</span></dt>
+<dd><p>F. Krebs, S. Böck, and G. Widmer. An efficient state space model for joint tempo and meter tracking. In <em>16th International Society for Music Information Retrieval Conference (ISMIR)</em>. 2011.</p>
+</dd>
+<dt class="label" id="id11"><span class="brackets">KBockDW16</span></dt>
+<dd><p>F. Krebs, S. Böck, M. Dorfer, and G. Widmer. Downbeat tracking using beat synchronous features with recurrent neural networks. In <em>17th International Society for Music Information Retrieval Conference (ISMIR)</em>. 2016.</p>
+</dd>
+<dt class="label" id="id190"><span class="brackets">KBockW13</span></dt>
+<dd><p>Florian Krebs, Sebastian Böck, and Gerhard Widmer. Rhythmic pattern modeling for beat and downbeat tracking in musical audio. In <em>ISMIR</em>, 227–232. 2013.</p>
+</dd>
+<dt class="label" id="id203"><span class="brackets">KHCW15</span></dt>
+<dd><p>Florian Krebs, Andre Holzapfel, Ali Taylan Cemgil, and Gerhard Widmer. Inferring metrical structure in music using particle filters. <em>IEEE/ACM Transactions on Audio, Speech, and Language Processing</em>, 23(5):817–827, 2015.</p>
+</dd>
+<dt class="label" id="id161"><span class="brackets">KH04</span></dt>
+<dd><p>Sanjiv Kumar and Martial Hebert. Discriminative fields for modeling spatial dependencies in natural images. In <em>Advances in neural information processing systems</em>, 1531–1538. 2004.</p>
+</dd>
+<dt class="label" id="id75"><span class="brackets">Lon04</span></dt>
+<dd><p>J. London. <em>Hearing in Time: Psychological Aspects of Musical Meter</em>. Oxford University Press, New York, USA, 2004.</p>
+</dd>
+<dt class="label" id="id3"><span class="brackets">MBock19</span></dt>
+<dd><p>EP MatthewDavies and Sebastian Böck. Temporal convolutional networks for musical audio beat tracking. In <em>2019 27th European Signal Processing Conference (EUSIPCO)</em>, 1–5. IEEE, 2019.</p>
+</dd>
+<dt class="label" id="id225"><span class="brackets">McF18</span></dt>
+<dd><p>Brian McFee. <em>Statistical Methods for Scene and Event Classification</em>, pages 103–146. Springer International Publishing, Cham, 2018. URL: <a class="reference external" href="https://doi.org/10.1007/978-3-319-63450-0_5">https://doi.org/10.1007/978-3-319-63450-0_5</a>, <a class="reference external" href="https://doi.org/10.1007/978-3-319-63450-0_5">doi:10.1007/978-3-319-63450-0_5</a>.</p>
+</dd>
+<dt class="label" id="id117"><span class="brackets">MB17</span></dt>
+<dd><p>Brian McFee and Juan P. Bello. Structured training for large-vocabulary chord recognition. In <em>18th International Society for Music Information Retrieval Conference</em>, ISMIR. 2017.</p>
+</dd>
+<dt class="label" id="id154"><span class="brackets">MR02</span></dt>
+<dd><p><strong>missing journal in murphy2002dynamic</strong></p>
+</dd>
+<dt class="label" id="id178"><span class="brackets">NH10</span></dt>
+<dd><p>Vinod Nair and Geoffrey E Hinton. Rectified linear units improve restricted boltzmann machines. In <em>Proceedings of the 27th international conference on machine learning (ICML-10)</em>, 807–814. 2010.</p>
+</dd>
+<dt class="label" id="id104"><span class="brackets">NRJB15</span></dt>
+<dd><p>L. Nunes, M. Rocamora, L. Jure, and L. W. P. Biscainho. Beat and downbeat tracking based on rhythmic patterns applied to the uruguayan candombe drumming. In <em>16th Int. Soc. for Music Information Retrieval Conf. (ISMIR)</em>, 264–270. Málaga, Spain, October 2015.</p>
+</dd>
+<dt class="label" id="id211"><span class="brackets">PT16</span></dt>
+<dd><p>Helene Papadopoulos and George Tzanetakis. Models for music analysis from a markov logic networks perspective. <em>IEEE/ACM Transactions on Audio, Speech, and Language Processing</em>, 25(1):19–34, 2016.</p>
+</dd>
+<dt class="label" id="id176"><span class="brackets">PP10a</span></dt>
+<dd><p>Hélene Papadopoulos and Geoffroy Peeters. Joint estimation of chords and downbeats from an audio signal. <em>IEEE Transactions on Audio, Speech, and Language Processing</em>, 19(1):138–152, 2010.</p>
+</dd>
+<dt class="label" id="id216"><span class="brackets">PHV16</span></dt>
+<dd><p>Giambattista Parascandolo, Heikki Huttunen, and Tuomas Virtanen. Recurrent neural networks for polyphonic sound event detection in real life recordings. In <em>2016 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)</em>, 6440–6444. IEEE, 2016.</p>
+</dd>
+<dt class="label" id="id179"><span class="brackets">PP10b</span></dt>
+<dd><p>Geoffroy Peeters and Helene Papadopoulos. Simultaneous beat and downbeat-tracking using a probabilistic framework: theory and large-scale evaluation. <em>IEEE Transactions on Audio, Speech, and Language Processing</em>, 19(6):1754–1769, 2010.</p>
+</dd>
+<dt class="label" id="id6"><span class="brackets">PBockCD21</span></dt>
+<dd><p>António S Pinto, Sebastian Böck, Jaime S Cardoso, and Matthew EP Davies. User-driven fine-tuning for beat tracking. <em>Electronics</em>, 10(13):1518, 2021.</p>
+</dd>
+<dt class="label" id="id227"><span class="brackets">PLV+19</span></dt>
+<dd><p>Hendrik Purwins, Bo Li, Tuomas Virtanen, Jan Schlüter, Shuo-Yiin Chang, and Tara Sainath. Deep learning for audio signal processing. <em>IEEE Journal of Selected Topics in Signal Processing</em>, 13(2):206–219, 2019.</p>
+</dd>
+<dt class="label" id="id146"><span class="brackets">Rab89</span></dt>
+<dd><p>Lawrence R Rabiner. A tutorial on hidden markov models and selected applications in speech recognition. <em>Proceedings of the IEEE</em>, 77(2):257–286, 1989.</p>
+</dd>
+<dt class="label" id="id241"><span class="brackets">Sch98</span></dt>
+<dd><p>Eric D Scheirer. Tempo and beat analysis of acoustic musical signals. <em>The Journal of the Acoustical Society of America</em>, 103(1):588–601, 1998.</p>
+</dd>
+<dt class="label" id="id195"><span class="brackets">SchluterBock14</span></dt>
+<dd><p>Jan Schlüter and Sebastian Böck. Improved musical onset detection with convolutional neural networks. In <em>2014 ieee international conference on acoustics, speech and signal processing (icassp)</em>, 6979–6983. IEEE, 2014.</p>
+</dd>
+<dt class="label" id="id151"><span class="brackets">SP97</span></dt>
+<dd><p>Mike Schuster and Kuldip K Paliwal. Bidirectional recurrent neural networks. <em>IEEE Transactions on Signal Processing</em>, 45(11):2673–2681, 1997.</p>
+</dd>
+<dt class="label" id="id162"><span class="brackets">Set05</span></dt>
+<dd><p>Burr Settles. Abner: an open source tool for automatically tagging genes, proteins and other entity names in text. <em>Bioinformatics</em>, 21(14):3191–3192, 2005.</p>
+</dd>
+<dt class="label" id="id156"><span class="brackets">SP03</span></dt>
+<dd><p>Fei Sha and Fernando Pereira. Shallow parsing with conditional random fields. In <em>Proceedings of the 2003 Conference of the North American Chapter of the Association for Computational Linguistics on Human Language Technology-Volume 1</em>, 134–141. Association for Computational Linguistics, 2003.</p>
+</dd>
+<dt class="label" id="id219"><span class="brackets">SBD16</span></dt>
+<dd><p>Siddharth Sigtia, Emmanouil Benetos, and Simon Dixon. An end-to-end neural network for polyphonic piano music transcription. <em>IEEE/ACM Transactions on Audio, Speech, and Language Processing</em>, 24(5):927–939, 2016.</p>
+</dd>
+<dt class="label" id="id150"><span class="brackets">SjobergL95</span></dt>
+<dd><p>Jonas Sjöberg and Lennart Ljung. Overtraining, regularization and searching for a minimum, with application to neural networks. <em>International Journal of Control</em>, 62(6):1391–1407, 1995.</p>
+</dd>
+<dt class="label" id="id51"><span class="brackets">SHCS15</span></dt>
+<dd><p>A. Srinivasamurthy, A. Holzapfel, A. T. Cemgil, and X. Serra. Particle filters for efficient meter tracking with dynamic bayesian networks. In <em>16th Int. Society for Music Information Retrieval Conf. (ISMIR)</em>. 2015. URL: <a class="reference external" href="http://hdl.handle.net/10230/34998">http://hdl.handle.net/10230/34998</a>.</p>
+</dd>
+<dt class="label" id="id46"><span class="brackets">SHCS16</span></dt>
+<dd><p>A. Srinivasamurthy, A. Holzapfel, A. T. Cemgil, and X. Serra. A generalized bayesian model for tracking long metrical cycles in acoustic music signals. In <em>IEEE Int. Conf. on Acoustics, Speech and Signal Processing (ICASSP)</em>, 76–80. Shanghai, China, March 2016.</p>
+</dd>
+<dt class="label" id="id224"><span class="brackets">SHS17</span></dt>
+<dd><p>Ajay Srinivasamurthy, Andre Holzapfel, and Xavier Serra. Informed automatic meter analysis of music recordings. In <em>ISMIR-International Conference on Music Information Retrieval</em>. 2017.</p>
+</dd>
+<dt class="label" id="id194"><span class="brackets">SHS14</span></dt>
+<dd><p>Ajay Srinivasamurthy, André Holzapfel, and Xavier Serra. In search of automatic rhythm analysis methods for turkish and indian art music. <em>Journal of New Music Research</em>, 43(1):94–114, 2014.</p>
+</dd>
+<dt class="label" id="id2"><span class="brackets">SR21</span></dt>
+<dd><p>Christian J Steinmetz and Joshua D Reiss. Wavebeat: end-to-end beat and downbeat tracking in the time domain. <em>arXiv preprint arXiv:2110.01436</em>, 2021.</p>
+</dd>
+<dt class="label" id="id47"><span class="brackets">SM06</span></dt>
+<dd><p>C. Sutton and A. McCallum. An introduction to conditional random fields for relational learning. In Lise Getoor and Ben Taskar, editors, <em>Introduction to Statistical Relational Learning</em>, chapter 4, pages 93–128. MIT Press, Cambridge, USA, 2006.</p>
+</dd>
+<dt class="label" id="id186"><span class="brackets">SM12</span></dt>
+<dd><p>Charles Sutton and Andrew McCallum. An introduction to conditional random fields. <em>Foundations and Trends® in Machine Learning</em>, 4(4):267–373, 2012.</p>
+</dd>
+<dt class="label" id="id137"><span class="brackets">USchluterG14</span></dt>
+<dd><p>Karen Ullrich, Jan Schlüter, and Thomas Grill. Boundary detection in music structure analysis using convolutional neural networks. In <em>ISMIR</em>, 417–422. 2014.</p>
+</dd>
+<dt class="label" id="id223"><span class="brackets">VDWK17</span></dt>
+<dd><p>Richard Vogl, Matthias Dorfer, Gerhard Widmer, and Peter Knees. Drum transcription via joint beat and drum modeling using convolutional recurrent neural networks. In <em>ISMIR</em>, 150–157. 2017.</p>
+</dd>
+<dt class="label" id="id148"><span class="brackets">W+90</span></dt>
+<dd><p>Paul J Werbos and others. Backpropagation through time: what it does and how to do it. <em>Proceedings of the IEEE</em>, 78(10):1550–1560, 1990.</p>
+</dd>
+<dt class="label" id="id54"><span class="brackets">WCG06</span></dt>
+<dd><p>N. Whiteley, A. T. Cemgil, and S. J. Godsill. Bayesian modelling of temporal structure in musical audio. In <em>7th Int. Society for Music Information Retrieval Conf. (ISMIR)</em>. Citeseer, 2006.</p>
+</dd>
+<dt class="label" id="id231"><span class="brackets">ZNY19</span></dt>
+<dd><p><strong>missing journal in zahraybeat</strong></p>
+</dd>
+<dt class="label" id="id202"><span class="brackets">ZDGomez14</span></dt>
+<dd><p>José R Zapata, Matthew EP Davies, and Emilia Gómez. Multi-feature beat tracking. <em>IEEE/ACM Transactions on Audio, Speech, and Language Processing</em>, 22(4):816–825, 2014.</p>
+</dd>
+<dt class="label" id="id222"><span class="brackets">ZZH+17</span></dt>
+<dd><p>Chen Zhu, Yanpeng Zhao, Shuaiyi Huang, Kewei Tu, and Yi Ma. Structured attentions for visual question answering. In <em>Proceedings of the IEEE International Conference on Computer Vision</em>, 1291–1300. 2017.</p>
+</dd>
+<dt class="label" id="id217"><span class="brackets">TheanoDTeam16</span></dt>
+<dd><p>Theano Development Team. Theano: A Python framework for fast computation of mathematical expressions. <em>arXiv e-prints</em>, May 2016. URL: <a class="reference external" href="http://arxiv.org/abs/1605.02688">http://arxiv.org/abs/1605.02688</a>.</p>
+</dd>
+</dl>
+</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ch6_resources"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="resources.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Resources and relevant projects</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="acknowledgments.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Acknowledgments</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Matthew E. P. Davies, Sebastian Bock, Magdalena Fuentes<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

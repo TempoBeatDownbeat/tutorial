@@ -1,0 +1,655 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post-processing &#8212; Tempo, Beat and Downbeat Estimation</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Design decisions for tempo, beat, and downbeat" href="design_decisions.html" />
+    <link rel="prev" title="Recurrent approaches: RNNs, LSTMs, and GRUs" href="dnns.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Tempo, Beat and Downbeat Estimation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Tempo, Beat, and Downbeat Estimation
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1_intro/tutorial_structure.html">
+   Tutorial Structure and Setup
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1_intro/tutorial_scope.html">
+   Tutorial scope and prerequisites
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Basics of tempo, beat, and downbeat
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2_basics/definition.html">
+   Definition by sound example
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2_basics/annotation.html">
+   How do we annotate?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2_basics/baseline.html">
+   Baseline approach
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2_basics/evaluate.html">
+   How do we evaluate?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch2_basics/perspectives.html">
+   Perspectives
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Going deep: theoretical underpinnings
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   Deep learning approaches
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dnns.html">
+   Recurrent approaches: RNNs, LSTMs, and GRUs
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Post-processing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="design_decisions.html">
+   Design decisions for tempo, beat, and downbeat
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="table.html">
+   Reference works
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Going deeper: practial examples
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4_going_deeper/loading_a_dataset.html">
+   Loading a dataset with mir-data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4_going_deeper/encoding_targets.html">
+   Encoding the target representations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4_going_deeper/creating_splits.html">
+   Creating splits for the dataset
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4_going_deeper/building_tcn_models.html">
+   Building individual TCN models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4_going_deeper/training_tcns.html">
+   Training the TCNs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4_going_deeper/model_prediction.html">
+   Model prediction and inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4_going_deeper/evaluation.html">
+   Evaluation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4_going_deeper/multitask.html">
+   Multi-task formulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4_going_deeper/fine_tuning.html">
+   Fine-tuning
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Discussion and conclusions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch5_discussion/recap.html">
+   Recap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch5_discussion/real_world_limitations.html">
+   Real world limitations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch5_discussion/open_challenges.html">
+   Open challenges
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch6_resources/resources.html">
+   Resources and relevant projects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch6_resources/references.html">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch6_resources/acknowledgments.html">
+   Acknowledgments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch6_resources/authors.html">
+   About the Authors
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/ch3_going_deep/postprocessing.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/magdalenafuentes/rhythm_tutorial"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/magdalenafuentes/rhythm_tutorial/issues/new?title=Issue%20on%20page%20%2Fch3_going_deep/postprocessing.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#probabilistic-graphical-models">
+   Probabilistic graphical models
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hidden-markov-models">
+   Hidden Markov Models
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dynamic-bayesian-networks">
+   Dynamic Bayesian Networks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-bar-pointer-model">
+   The Bar Pointer Model
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hidden-states">
+     Hidden states
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#transition-model">
+     Transition Model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#observation-model">
+     Observation model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inference">
+     Inference
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conditional-random-fields">
+   Conditional Random Fields
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-chain-conditional-random-fields">
+     Linear-chain Conditional Random Fields
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="post-processing">
+<span id="dnns-postprocessing"></span><h1>Post-processing<a class="headerlink" href="#post-processing" title="Permalink to this headline">¶</a></h1>
+<p>Ideally the output likelihood of a DNN would be a robust estimation of the positions of beats and downbeats, but in practice likelihoods are noisy, and just
+post-processing them using peak-picking or a simple threshold would not be enough to obtain a musically consistent sequence. To obtain a reasonable estimation of beat and
+downbeat positions, most methods use a Probabilistic Graphical Models (PGMs) as post-processing of a likelihood from a DNN, as they allow to easily and intuitively encode musical-consistency constrains at inference time.</p>
+<div class="figure align-center" id="postprocessing">
+<a class="reference internal image-reference" href="../_images/postprocessing.gif"><img alt="Post-processing the likelihood from a DNN." src="../_images/postprocessing.gif" style="width: 1200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Post-processing the likelihood from a DNN.</span><a class="headerlink" href="#postprocessing" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="probabilistic-graphical-models">
+<h2>Probabilistic graphical models<a class="headerlink" href="#probabilistic-graphical-models" title="Permalink to this headline">¶</a></h2>
+<p>PGMs are a set of probabilistic models that express conditional dependencies between random variables as a graph. This graph can be <em>directed</em>, carrying a
+causal interpretation, or <em>undirected</em>, where there are no causal influences represented. Figure — <code class="xref std std-numref docutils literal notranslate"><span class="pre">graph</span></code>— illustrates these two distinct types of graphs. In directed graphs, the concept of <em>parent nodes</em> refers to nodes that precede topologically the others.</p>
+<div class="figure align-default" id="graphs">
+<img alt="Example of a directed graph (left) and an undirected (right)." src="../_images/direct_undirect_graph.png" />
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Example of directed graph (left) and undirected graph (right).</span><a class="headerlink" href="#graphs" title="Permalink to this image">¶</a></p>
+</div>
+<p>In the context of classification problems, the objective is to assign classes to observed entities. Two approaches commonly used in the context of sequential data
+classification are <em>generative</em> and <em>discriminative</em> models. Generative models are concerned with modelling the joint probability <span class="math notranslate nohighlight">\(P(\textbf{x},\textbf{y})\)</span> given the input and output sequences
+<span class="math notranslate nohighlight">\(\textbf{x}\)</span> and <span class="math notranslate nohighlight">\(\textbf{y}\)</span>. They are generative in the sense that they describe how the output probabilistically generates the input, and the main advantage of this approach is that it is possible to
+generate samples from it (i.e. to generate synthetic data that can be useful in many applications). The main disadvantage of generative models is that to use them in classification tasks, where the ultimate goal is to obtain the
+sequence that maximizes <span class="math notranslate nohighlight">\(P(\textbf{y}|\textbf{x})\)</span> (the most probable output given the input), one needs to model the likelihood <span class="math notranslate nohighlight">\(P(\textbf{x}|\textbf{y})\)</span>. Modelling <span class="math notranslate nohighlight">\(P(\textbf{x}|\textbf{y})\)</span> can be very difficult when data
+involves very complex interrelations, but also simplifying them or ignoring such dependencies can impact the performance of the model <span id="id1">[<a class="reference internal" href="../ch6_resources/references.html#id186">SM12</a>]</span>.
+In applications where generating data is not intended, it is more efficient to use <em>discriminative</em> models, which directly model the conditional probability between inputs and outputs <span class="math notranslate nohighlight">\(P(\textbf{y}|\textbf{x})\)</span>.
+The main advantage of these models is that relations that only involve <span class="math notranslate nohighlight">\(\textbf{x}\)</span> play no role in the modelling, usually leading to compact models with simpler structure than generative models.
+However, in the context of beat and downbeat tracking both types of models –generative and discriminative– have been used leading to similar results.</p>
+<p>PGMs have been explored across different MIR tasks given their capacity to deal with structure in a flexible manner. In the following we introduce the main models exploited in the literature and their motivation, instantiating relevant works.</p>
+</div>
+<div class="section" id="hidden-markov-models">
+<span id="dnns-hmms"></span><h2>Hidden Markov Models<a class="headerlink" href="#hidden-markov-models" title="Permalink to this headline">¶</a></h2>
+<p>Hidden Markov models (HMMs) <span id="id2">[<a class="reference internal" href="../ch6_resources/references.html#id146">Rab89</a>]</span> are the most common graphical models used for music processing <span id="id3">[<a class="reference internal" href="../ch6_resources/references.html#id211">PT16</a>]</span>, in particular in rhythm analysis <span id="id4">[<a class="reference internal" href="../ch6_resources/references.html#id59">DBDR16</a>, <a class="reference internal" href="../ch6_resources/references.html#id51">SHCS15</a>]</span> and widely used
+in the context of speech analysis and sequential problems in general. HMMs are generative models, so they compute the joint probability <span class="math notranslate nohighlight">\(P(\textbf{x},\textbf{y})\)</span> between a sequence of <span class="math notranslate nohighlight">\(T\)</span> \textit{hidden states} <span class="math notranslate nohighlight">\(\textbf{y}\)</span> and a sequence
+of \textit{observations} <span class="math notranslate nohighlight">\(\textbf{x}\)</span>. A HMM makes two important independence assumptions:</p>
+<ol class="simple">
+<li><p>each observation <span class="math notranslate nohighlight">\(x_t\)</span> depends only on the current state <span class="math notranslate nohighlight">\(y_t\)</span>,</p></li>
+<li><p>each state <span class="math notranslate nohighlight">\(y_t\)</span> depends only on its immediate predecessor <span class="math notranslate nohighlight">\(y_{t-1}\)</span>, which is called the Markovian assumption.\footnote{There is an extension of this case called \textit{k-order HMMs}, in which the dependence of the current state <span class="math notranslate nohighlight">\(y_t\)</span> is extended up to <span class="math notranslate nohighlight">\(k\)</span> states in the past.}</p></li>
+</ol>
+<p>The joint probability of the state sequence <span class="math notranslate nohighlight">\(\textbf{y}\)</span> and the observation sequence <span class="math notranslate nohighlight">\(\textbf{x}\)</span> in an HMM factorizes as a product of conditional probabilities, given by the parent node in the direct graph as:</p>
+<div class="math notranslate nohighlight">
+\[
+P(\mathbf{y},\mathbf{x}) = P(y_1)\prod _{t=2} ^T P(y_t|y_{t-1})P(x_t|y_t),
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(P(y_t|y_{t-1})\)</span> is the \textit{transition probability}, <span class="math notranslate nohighlight">\(P(x_t|y_t)\)</span> is the \textit{observation probability}, and <span class="math notranslate nohighlight">\(P(y_1)\)</span> is the distribution over initial states.</p>
+<p>Rhythm analysis problems such as beat or downbeat tracking can be seen as sequence labelling problems, so that given a sequence of observations, the objective is to assign a pre-defined class to each one of these events. In the context of HMMs, this translates to finding the maximum
+likelihood sequence <span class="math notranslate nohighlight">\(\textbf{x}^*\)</span> that maximizes <span class="math notranslate nohighlight">\(P(\textbf{x}|\textbf{y})\)</span>, that is:</p>
+<div class="math notranslate nohighlight">
+\[
+\textbf{x}^* = \textnormal{arg}\: \textnormal{max}_{x}P(\textbf{x}|\textbf{y})
+\]</div>
+<p>The most common algorithm used to solve this is the <em>Viterbi</em> algorithm <span id="id5">[<a class="reference internal" href="../ch6_resources/references.html#id146">Rab89</a>]</span>.</p>
+</div>
+<div class="section" id="dynamic-bayesian-networks">
+<span id="dnns-dbns"></span><h2>Dynamic Bayesian Networks<a class="headerlink" href="#dynamic-bayesian-networks" title="Permalink to this headline">¶</a></h2>
+<p>Dynamic Bayesian Networks (DBNs) <span id="id6">[<a class="reference internal" href="../ch6_resources/references.html#id154">MR02</a>]</span> are a generalization of HMMs. DBNs are Bayesian Networks that relate variables to each other over adjacent time steps.
+Like HMMs, they represent a set of random variables and their conditional dependencies with a directed acyclic graph, but they are more general than HMMs
+since they allow one to model multiple hidden states. Given the hidden and observed sequences of variables <span class="math notranslate nohighlight">\(\textbf{y}\)</span> and <span class="math notranslate nohighlight">\(\textbf{x}\)</span> of length <span class="math notranslate nohighlight">\(T\)</span>,
+the joint probability of the hidden and observed variables factorizes as:</p>
+<div class="math notranslate nohighlight">
+\[
+P(\textbf{y},\textbf{x})=P(\textbf{y}_1)\prod ^T _{t=2}P(\textbf{y}_t | \textbf{y}_{t-1})P(\textbf{x}_t | \textbf{y}_t),
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(P(\textbf{y}_t | \textbf{y}_{t-1})\)</span>, <span class="math notranslate nohighlight">\(P(\textbf{x}_t | \textbf{y}_t)\)</span> and <span class="math notranslate nohighlight">\(P(\textbf{y}_1)\)</span> the transition probability, observation probability and initial states distribution
+as an HMM, but over a \textit{set} of hidden variables. The initial state distribution is usually set to a uniform initialization in practice.</p>
+<p>DBNs provide an effective framework to represent hierarchical relations in sequential data, as it is the case of musical rhythm. Probably the most successful example is the <em>bar pointer model</em> (BPM)
+<span id="id7">[<a class="reference internal" href="../ch6_resources/references.html#id54">WCG06</a>]</span>, which has been proposed by Whiteley et al. for the task of meter analysis and has been further extended in recent years <span id="id8">[<a class="reference internal" href="../ch6_resources/references.html#id32">HKS14</a>, <a class="reference internal" href="../ch6_resources/references.html#id11">KBockDW16</a>, <a class="reference internal" href="../ch6_resources/references.html#id190">KBockW13</a>, <a class="reference internal" href="../ch6_resources/references.html#id51">SHCS15</a>, <a class="reference internal" href="../ch6_resources/references.html#id46">SHCS16</a>]</span>.
+Part of the work of this dissertation is based on the BPM, so a short overview of it and one of its relevant variants is presented in the following.
+Given that there are multiple versions of this model, we chose the variant presented in <span id="id9">[<a class="reference internal" href="../ch6_resources/references.html#id51">SHCS15</a>]</span> for this explanation.</p>
+</div>
+<div class="section" id="the-bar-pointer-model">
+<span id="dnns-bpm"></span><h2>The Bar Pointer Model<a class="headerlink" href="#the-bar-pointer-model" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="bpm">
+<a class="reference internal image-reference" href="../_images/bpm.png"><img alt="Example of a directed graph (left) and an undirected (right)." src="../_images/bpm.png" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">Bar Pointer Model as it appears in <span id="id10">[<a class="reference internal" href="../ch6_resources/references.html#id51">SHCS15</a>]</span>. Double circles denote continuous variables, and simple circles denote discrete variables. The gray nodes are observed, and the white nodes represent hidden variables.</span><a class="headerlink" href="#bpm" title="Permalink to this image">¶</a></p>
+</div>
+<p>The BPM describes the dynamics of a hypothetical pointer that indicates the position within a bar, and progresses at the speed of the tempo of the piece, until the end of the bar
+where it resets its value to track the next bar. A key assumption in this model is that there is an underlying bar-length rhythmic pattern that depends on the style of the music piece,
+which is used to track the position of the pointer.</p>
+<p>The effectiveness of this model relies on its flexibility, since it accounts for different metrical structures, tempos and rhythmic patterns, allowing its application in different music
+genres ranging from Indian music to Ballroom dances <span id="id11">[<a class="reference internal" href="../ch6_resources/references.html#id32">HKS14</a>, <a class="reference internal" href="../ch6_resources/references.html#id46">SHCS16</a>]</span>.</p>
+<div class="section" id="hidden-states">
+<h3>Hidden states<a class="headerlink" href="#hidden-states" title="Permalink to this headline">¶</a></h3>
+<p>The hidden state <span class="math notranslate nohighlight">\(\textbf{y}_t\)</span> represents the position of the hypothetical pointer at each time frame <span class="math notranslate nohighlight">\(t\)</span>, and is given by <span class="math notranslate nohighlight">\(\textbf{y}_t=[\phi_t\:\: \dot{\phi}_t \:\: r_t]\)</span>,
+where each variable describes the position inside the bar, the instantaneous tempo, and the rhythmic pattern respectively.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(r_t \in {r_1 \ldots r_R}\)</span> is a rhythmic pattern indicator that can be used to differentiate between <span class="math notranslate nohighlight">\(R\)</span> different rhythmic patterns, which can be known \textit{a priori} or learned.</p></li>
+<li><p>The variable <span class="math notranslate nohighlight">\(\phi _t \in [0,M_{r_t})\)</span> is the current position in a bar, and <span class="math notranslate nohighlight">\(M_{r_t}\)</span> is the length of a bar related to the considered rhythmic patterns. Different rhythmic patterns associated to different time signatures or meter cycles will have different number of discrete positions. Common practice is to fix the length of one time signature or meter cycle and scale the rest accordingly.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\dot{\phi}_t \in [\dot{\phi}_{min},\:\dot{\phi}_{max}]\)</span> is the instantaneous tempo (denoting the rate at which the bar pointer traverses a bar). <span class="math notranslate nohighlight">\(\dot{\phi}_t\)</span> is given by the number of bar positions per frame. The tempo limits are assumed to depend on the rhythmic pattern state.</p></li>
+</ul>
+</div>
+<div class="section" id="transition-model">
+<h3>Transition Model<a class="headerlink" href="#transition-model" title="Permalink to this headline">¶</a></h3>
+<p>Due to the conditional independence relations shown in Figure \ref{fig:bpm}, the transition model factorizes as:
+$<span class="math notranslate nohighlight">\(
+P(\textbf{y}_t | \textbf{y}_{t-1})=P(\phi_t | \phi_{t-1},\dot{\phi}_{t-1},r_{t-1})\times P(\dot{\phi}_t | \dot{\phi}_{t-1})\times P(r_t | r_{t-1}, \phi_{t-1}, \phi_t),
+\)</span>$
+where the three factors are defined as:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P(\phi _t | \phi _{t-1},\dot{\phi}_{t-1},r_{t-1})=1_\phi\)</span>, where <span class="math notranslate nohighlight">\(1_\phi\)</span> is an indicator function that equals one if <span class="math notranslate nohighlight">\(\phi _t=(\phi _{t-1}+\dot{\phi}_{t-1})\: \textnormal{mod} \: M_{r_t}\)</span> and <span class="math notranslate nohighlight">\(0\)</span> otherwise.</p></li>
+<li><p>The tempo transition from one frame to the next is assumed to follow a normal distribution and is given by: <span class="math notranslate nohighlight">\(P(\dot{\phi}_t |\dot{\phi}_{t-1})\propto \mathcal{N}(\dot{\phi} _{t-1},
+\sigma ^2 _{\dot{\phi}})\times 1_{\dot{\phi}}\)</span>, where <span class="math notranslate nohighlight">\(\sigma _{\dot{\phi}}\)</span> is the standard deviation of the tempo transition model and <span class="math notranslate nohighlight">\(1_{\dot{\phi}}\)</span> is an indicator function that equals one if <span class="math notranslate nohighlight">\(\dot{\phi_t} \in [\dot{\phi_{min}}, \dot{\phi_{max}}]\)</span>, and <span class="math notranslate nohighlight">\(0\)</span> otherwise.</p></li>
+<li><p><span class="math notranslate nohighlight">\(P(r_t | r_{t-1},\phi_{t-1}, \phi_t)=  \left\{
+\begin{array}{&#64;{} l l &#64;{}}
+   \mathcal{A}(r_t, r_{t-1})  &amp;  \hspace{-0.2cm}\textnormal{if}\: \phi_t &lt; \phi_{t-1},\\
+   1_r   &amp;  \hspace{-0.15cm}   \textnormal{otherwise},
+  \end{array}\right .\)</span>,
+where <span class="math notranslate nohighlight">\(\mathcal{A}(i,j)\)</span> is the transition probability from <span class="math notranslate nohighlight">\(r_i\)</span> to <span class="math notranslate nohighlight">\(r_j\)</span>, and <span class="math notranslate nohighlight">\(1_r\)</span> is an indicator function that equals one when <span class="math notranslate nohighlight">\(r_t=r_{t-1}\)</span> and <span class="math notranslate nohighlight">\(0\)</span> otherwise.</p></li>
+</ul>
+</div>
+<div class="section" id="observation-model">
+<h3>Observation model<a class="headerlink" href="#observation-model" title="Permalink to this headline">¶</a></h3>
+<p>The observation model <span class="math notranslate nohighlight">\(P(\textbf{x}_t|\textbf{y}_t)=P(\textbf{x}_t| \phi_t, r_t)\)</span> proposed in <span id="id12">[<a class="reference internal" href="../ch6_resources/references.html#id51">SHCS15</a>]</span> is given by learned features using GMMs with two components.
+Among the variations of the BPM, other observation models have been proposed using RNNs <span id="id13">[<a class="reference internal" href="../ch6_resources/references.html#id213">BockKW16</a>, <a class="reference internal" href="../ch6_resources/references.html#id18">KBockW11</a>]</span>.</p>
+</div>
+<div class="section" id="inference">
+<h3>Inference<a class="headerlink" href="#inference" title="Permalink to this headline">¶</a></h3>
+<p>The inference of a model with continuous variables such as the one of Figure <strong>\ref{fig:bpm}</strong> is usually done approximately, where <em>sequential Monte Carlo (SMC)</em>  algorithms have been explored
+in the context of rhythm analysis <span id="id14">[<a class="reference internal" href="../ch6_resources/references.html#id203">KHCW15</a>, <a class="reference internal" href="../ch6_resources/references.html#id51">SHCS15</a>]</span>. It is also common to discretize the variables <span class="math notranslate nohighlight">\(\dot{\phi}_t\)</span> and <span class="math notranslate nohighlight">\(\phi_t\)</span>, and then perform the inference using Viterbi.</p>
+</div>
+</div>
+<div class="section" id="conditional-random-fields">
+<span id="dnns-crfs"></span><h2>Conditional Random Fields<a class="headerlink" href="#conditional-random-fields" title="Permalink to this headline">¶</a></h2>
+<p>Conditional Random Fields (CRFs) are a particular case of undirected PGMs. Unlike generative models such as HMMs, which model the joint probability of the input and output <span class="math notranslate nohighlight">\(P(\textbf{x},\textbf{y})\)</span>, CRFs model the conditional probability
+of the output given the input <span class="math notranslate nohighlight">\(P(\textbf{y}|\textbf{x})\)</span>. CRFs can be defined in any undirected graph, making them suitable to diverse problems where structured prediction is needed across various fields, including text processing
+<span id="id15">[<a class="reference internal" href="../ch6_resources/references.html#id162">Set05</a>, <a class="reference internal" href="../ch6_resources/references.html#id156">SP03</a>]</span>, computer vision <span id="id16">[<a class="reference internal" href="../ch6_resources/references.html#id158">HZCPerpinan04</a>, <a class="reference internal" href="../ch6_resources/references.html#id161">KH04</a>]</span> and combined applications of NLP and computer vision <span id="id17">[<a class="reference internal" href="../ch6_resources/references.html#id222">ZZH+17</a>]</span>.</p>
+<p>The problems addressed in this dissertation are sequential, i.e. the variables involved have a strong dependency over time. Equation \ref{eq:crfs_sequential} presents a generic CRF model for sequential problems,
+where <span class="math notranslate nohighlight">\(\Psi _k\)</span> are called <em>potentials</em>, which act in a similar way to transition and observation matrices in HMMs and DBNs, expressing relations between <span class="math notranslate nohighlight">\(\textbf{x}\)</span> and <span class="math notranslate nohighlight">\(\textbf{y}\)</span>. <span class="math notranslate nohighlight">\(k\)</span> is a feature index, that
+exploits a particular relation between input and output. The term <span class="math notranslate nohighlight">\(Z(\textbf{x})\)</span>, called the <em>partition function</em>, acts as a normalization term to ensure that the expression in <strong>Equation \ref{eq:crfs_sequential}</strong>
+is a properly defined probability.</p>
+<div class="math notranslate nohighlight">
+\[
+P(\textbf{y}|\textbf{x}) = \frac{1}{Z(\textbf{x})} \prod _{t=1} ^T \prod_{k=1} ^K \Psi_k(\textbf{x},\textbf{y},t)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+Z(\textbf{x}) = \sum_y \prod_{t=1} ^T \prod_{k=1} ^K \Psi_k(\textbf{x},\textbf{y},t)
+\]</div>
+<div class="section" id="linear-chain-conditional-random-fields">
+<h3>Linear-chain Conditional Random Fields<a class="headerlink" href="#linear-chain-conditional-random-fields" title="Permalink to this headline">¶</a></h3>
+<p>Linear-chain CRFs (LCCRFs) restrict the model of <strong>Equation \ref{eq:crfs_sequential}</strong> to a Markov chain, that is, the output variable at time <span class="math notranslate nohighlight">\(t\)</span> depends only on the previous output variable at time <span class="math notranslate nohighlight">\(t-1\)</span>. Another
+common constraint usually imposed in LCCRFs is to restrict the dependence on the current input <span class="math notranslate nohighlight">\(x_t\)</span> instead of the whole input sequence <span class="math notranslate nohighlight">\(\textbf{x}\)</span>, resulting in the following model:</p>
+<div class="math notranslate nohighlight">
+\[
+P(\textbf{y}|\textbf{x}) = \frac{1}{Z(\textbf{x})} \Phi(x_1,y_1) \prod _{t=1} ^T \Psi(y_{t-1},y_t) \Phi(x_t,y_t).
+\]</div>
+<p>These simplifications, which make the LCCRF model very similar to the HMMS and DBNs, are often adopted in practice for complexity reasons <span id="id18">[<a class="reference internal" href="../ch6_resources/references.html#id186">SM12</a>]</span>, though there exist some exceptions
+<span id="id19">[<a class="reference internal" href="../ch6_resources/references.html#id28">FJDE15</a>]</span>. The potentials <span class="math notranslate nohighlight">\(\Psi_k\)</span> of Equation \ref{eq:crfs_sequential} become simply <span class="math notranslate nohighlight">\(\Psi\)</span> and <span class="math notranslate nohighlight">\(\Phi\)</span> in Equation \ref{eq:lccrfs_general}, which are the <em>transition</em> and <em>observation</em> potentials respectively.
+The transition potential models interactions between consecutive output labels, whereas the observation potential establishes the relation between the input <span class="math notranslate nohighlight">\(x_t\)</span> and the output <span class="math notranslate nohighlight">\(y_t\)</span>. Note that potentials in CRF models do
+not need to be proper probabilities, given the normalization term <span class="math notranslate nohighlight">\(Z(\textbf{x})\)</span>. The inference in LCCRFs is done to find the most probable sequence <span class="math notranslate nohighlight">\(\textbf{y}^*\)</span> so:</p>
+<div class="math notranslate nohighlight">
+\[
+\textbf{y}^* = \textnormal{arg}\: \textnormal{max}_{y}P(\textbf{y}|\textbf{x}),
+\]</div>
+<p>and it is usually computed using the Viterbi algorithm, as in the case of HMMs <span id="id20">[<a class="reference internal" href="../ch6_resources/references.html#id47">SM06</a>]</span>.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ch3_going_deep"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="dnns.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Recurrent approaches: RNNs, LSTMs, and GRUs</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="design_decisions.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Design decisions for tempo, beat, and downbeat</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Matthew E. P. Davies, Sebastian Bock, Magdalena Fuentes<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

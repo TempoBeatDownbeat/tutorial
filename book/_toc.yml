@@ -1,0 +1,49 @@
+format: jb-book
+root: intro
+parts:
+  - caption: 'Introduction'
+    chapters:
+    - file: ch1_intro/tutorial_structure
+    - file: ch1_intro/tutorial_scope
+
+  - caption: 'Basics of tempo, beat, and downbeat'
+    chapters:
+    - file: ch2_basics/definition
+    - file: ch2_basics/annotation
+    - file: ch2_basics/baseline
+    - file: ch2_basics/evaluate
+    - file: ch2_basics/perspectives
+
+  - caption: 'Going deep: theoretical underpinnings'
+    chapters:
+    - file: ch3_going_deep/overview
+    - file: ch3_going_deep/dnns
+    - file: ch3_going_deep/postprocessing
+    - file: ch3_going_deep/design_decisions
+    - file: ch3_going_deep/table
+
+  - caption: 'Going deeper: practial examples'
+    chapters:
+    - file: ch4_going_deeper/loading_a_dataset
+    - file: ch4_going_deeper/encoding_targets
+    - file: ch4_going_deeper/creating_splits
+    - file: ch4_going_deeper/building_tcn_models
+    - file: ch4_going_deeper/training_tcns
+    - file: ch4_going_deeper/model_prediction
+    - file: ch4_going_deeper/evaluation
+    - file: ch4_going_deeper/multitask
+    - file: ch4_going_deeper/fine_tuning
+
+  - caption: 'Discussion and conclusions'
+    chapters:
+    - file: ch5_discussion/recap
+    - file: ch5_discussion/real_world_limitations
+    - file: ch5_discussion/open_challenges
+
+  - caption: 'Resources'
+    chapters:
+    - file: ch6_resources/resources
+    - file: ch6_resources/references
+    - file: ch6_resources/acknowledgments
+    - file: ch6_resources/authors
+    

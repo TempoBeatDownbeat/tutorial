@@ -1,0 +1,710 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How do we annotate? &#8212; Tempo, Beat and Downbeat Estimation</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Baseline approach" href="baseline.html" />
+    <link rel="prev" title="Definition by sound example" href="definition.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Tempo, Beat and Downbeat Estimation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Tempo, Beat, and Downbeat Estimation
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1_intro/tutorial_structure.html">
+   Tutorial Structure and Setup
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch1_intro/tutorial_scope.html">
+   Tutorial scope and prerequisites
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Basics of tempo, beat, and downbeat
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="definition.html">
+   Definition by sound example
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   How do we annotate?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="baseline.html">
+   Baseline approach
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="evaluate.html">
+   How do we evaluate?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="perspectives.html">
+   Perspectives
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Going deep: theoretical underpinnings
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3_going_deep/overview.html">
+   Deep learning approaches
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3_going_deep/dnns.html">
+   Recurrent approaches: RNNs, LSTMs, and GRUs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3_going_deep/postprocessing.html">
+   Post-processing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3_going_deep/design_decisions.html">
+   Design decisions for tempo, beat, and downbeat
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3_going_deep/table.html">
+   Reference works
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Going deeper: practial examples
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4_going_deeper/loading_a_dataset.html">
+   Loading a dataset with mir-data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4_going_deeper/encoding_targets.html">
+   Encoding the target representations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4_going_deeper/creating_splits.html">
+   Creating splits for the dataset
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4_going_deeper/building_tcn_models.html">
+   Building individual TCN models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4_going_deeper/training_tcns.html">
+   Training the TCNs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4_going_deeper/model_prediction.html">
+   Model prediction and inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4_going_deeper/evaluation.html">
+   Evaluation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4_going_deeper/multitask.html">
+   Multi-task formulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch4_going_deeper/fine_tuning.html">
+   Fine-tuning
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Discussion and conclusions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch5_discussion/recap.html">
+   Recap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch5_discussion/real_world_limitations.html">
+   Real world limitations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch5_discussion/open_challenges.html">
+   Open challenges
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch6_resources/resources.html">
+   Resources and relevant projects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch6_resources/references.html">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch6_resources/acknowledgments.html">
+   Acknowledgments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch6_resources/authors.html">
+   About the Authors
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/ch2_basics/annotation.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/magdalenafuentes/rhythm_tutorial"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/magdalenafuentes/rhythm_tutorial/issues/new?title=Issue%20on%20page%20%2Fch2_basics/annotation.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#manual-annotation-example">
+   Manual annotation example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#perspectives-on-manual-annotation">
+   Perspectives on manual annotation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#towards-automating-the-annotation-process">
+   Towards automating the annotation process
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-annotated-datasets">
+   Example annotated datasets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="how-do-we-annotate">
+<span id="annotatemap"></span><h1>How do we annotate?<a class="headerlink" href="#how-do-we-annotate" title="Permalink to this headline">¶</a></h1>
+<p>Within the context of the kind of data-driven approaches to the estimation
+of tempo, beats, and downbeats we explore in this tutorial, a critical aspect is
+how to acquire some data to learn from, and ultimately to evaluate upon.</p>
+<p>The “data” in question refers to annotations of beat and downbeat
+locations from which either: i) a global value tempo for a roughly
+constant tempo piece of music; or ii) a local tempo contour can be derived.</p>
+<p>The workflow by which beat and downbeat annotations can be obtained
+typically involves an interative process departing from an initial estimate,
+e.g., marking beat locations only, correcting timing errors, followed by
+a labelling process to mark the metrical position of each beat.</p>
+<p>This initial estimate could be obtained by hand, i.e., by tapping
+along with the musical audio excerpt in a software such as <code class="docutils literal notranslate"><span class="pre">Sonic</span> <span class="pre">Visualiser</span></code>,
+or alternatively, by running an existing beat estimation algorithm, e.g., from <code class="docutils literal notranslate"><span class="pre">madmom</span></code> or <code class="docutils literal notranslate"><span class="pre">librosa</span></code> and then loading this annotation layer.</p>
+<p>We can consider these approaches to be <strong>manual</strong> or <strong>semi-automatic</strong>.
+Within the beat tracking literature and the creation of datasets,
+both approaches have been used. To begin with, we’ll focus on the fully manual approach.</p>
+<div class="section" id="manual-annotation-example">
+<span id="annotatemap-example"></span><h2>Manual annotation example<a class="headerlink" href="#manual-annotation-example" title="Permalink to this headline">¶</a></h2>
+<p>The figure below gives an illustration of a typical manual annotation process
+in <code class="docutils literal notranslate"><span class="pre">Sonic</span> <span class="pre">Visualiser</span></code>.
+The excerpt in quesiton is the straightforward musical excerpt
+from the previous section that we’ve already here, and is around 25s in duration
+with a constant tempo and 4/4 metre.</p>
+<div class="figure align-center" id="annotate">
+<a class="reference internal image-reference" href="../_images/annotation_process.gif"><img alt="Annotation example in Sonic Visualiser." src="../_images/annotation_process.gif" style="width: 1200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Annotation example in Sonic Visualiser.</span><a class="headerlink" href="#annotate" title="Permalink to this image">¶</a></p>
+</div>
+<p>The stages of the process as follows:</p>
+<ol class="simple">
+<li><p>Listening to the excerpt and tapping along in real time to mark the beat locations.
+Note, usually it’s not possible to start tapping straight away as it takes some time
+for a listener to infer the beat (even for familiar pieces of music).
+In this case, the tapper begins at the start of the 3rd bar, meaning the first two bars will need to be filled in later.</p></li>
+<li><p>Having completed one real-time pass over the musical excerpt, the next stage is to go
+back and listen again, but this time with the beat annotations rendered as audible
+clicks of short duration. As becomes clear from watching the clip above,
+the timing of the taps is not super precise! As such many of the beats need to be altered to compensate for temporal imprecision.
+While this could simply be slopping timing on the part of the
+tapper, in practice it is likely a a combination of human motor noise and jitter <a class="footnote-reference brackets" href="#id11" id="id1">1</a> in the acquisition of the keyboard taps.
+In this case, there are not duplicated or missing taps
+(besides those of the first two bars), and so the editing operations are exclusively
+performed by shifting the annotations – using the waveform as a guide – and listening back for perceptual accuracy.</p></li>
+<li><p>Once done, the annotations for the first two bars are marked approximately by hand
+and the main listening and editing process in the previous step is applied again.</p></li>
+<li><p>In this excerpt, there is a constant 4/4 metre throughout, thus it is straightforward
+to have Sonic Visualiser apply two-level labels to the beat locations, 1.1, 1.2., 1.3,
+1.4, 2.1, 2.2., etc. where each ‘x.1’ corresponds to a downbeat. Although, in more complex cases containing changes in metre, it may be necessary to edit the annotation labels by hand. Having performed this labelling, a final listen and minor edits are made, the process is complete and the annotations can be exported.</p></li>
+</ol>
+</div>
+<div class="section" id="perspectives-on-manual-annotation">
+<span id="annotatemap-perspectives"></span><h2>Perspectives on manual annotation<a class="headerlink" href="#perspectives-on-manual-annotation" title="Permalink to this headline">¶</a></h2>
+<p>At this point it is worth a little reflection the practical aspects of the manual annotation and editing process. The musical excerpt is under 25s in duration
+yet the total time taken to complete the annotation is a little over 4 minutes
+(approximately a <strong>10x</strong> overhead). Concerning the number and type of edits, we find 8
+insertions: corresponding to the first two bars, 0 deletions, and 21 shifting operations (including some beats shifted more than once!) for a total of 32 beats.</p>
+<p>For brevity, the annotation corrections were made rather quickly with an emphasis on
+approximate perceptual accuracy as opposed to extremely precise hand-labelling.
+A more “forensic” analysis of the waveform (perhaps supported by other
+time-frequency representations) and additional listening back would further increase the
+annotation time. Of course, the better the real-time taps the fewer repeated listens and
+editing operations, but in the limit even where no edits are required, this would still
+requires two complete listens (once to tap, once to confirm).</p>
+<p>If we then begin to consider more complex musical material, e.g., with challenging
+musical properties such as syncopation, expressive timing, metrical changes, lack of
+percussion etc. together the cognitive burden of annotating and annotator fatigue it’s
+easy to imagine that the annotation process could be 1-2 orders of magnitude more
+time-consuming. As we’ve seen in the case of the expressive excerpt in the previous
+section, specific aspects of the annotation may require access to a musical score (if it exists and is available).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For comparison, the expressive piece in its entirety (4m51s) which is used extensively in <span id="id2">[<a class="reference internal" href="../ch6_resources/references.html#id6">PBockCD21</a>]</span> took around 15 hours to annotate (spread over 3 days), and included frequent discussion with musical experts.</p>
+</div>
+<p><strong>Why does this matter?</strong> This matters in the context of deep learning,
+since we’d typically like to acquire as much high-quality annotated data as possible
+when training models. Thus if it is very expensive and time-consuming to accurately annotate then this may intrinsically limit the potential of deep learning approaches.</p>
+<p>Furthermore, it is also worthwhile to consider the type of musical material will be annotated since it’s not just about “how much” but also “what.” While straightforward
+musical excerpts like the one shown above are essentially easy to annotate
+there may be little benefit in annotating this kind of musical content since it
+is already “trackable.” On this basis, the added benefit in annotation likely
+resides in more challenging musical material which takes longer to annotate
+and may be more ambiguous.</p>
+</div>
+<div class="section" id="towards-automating-the-annotation-process">
+<span id="annotatemap-automating"></span><h2>Towards automating the annotation process<a class="headerlink" href="#towards-automating-the-annotation-process" title="Permalink to this headline">¶</a></h2>
+<p>Given the labour-intensive nature of the annotation process, it is useful
+to consider possible steps for at least partial automation.</p>
+<ul class="simple">
+<li><p>Instead of performing real-time tapping to make an initial estimate
+of the beat, it’s possible to execute an existing beat tracking algorithm.
+For easier examples this may be highly beneficial as the issues
+relating to (human) motor noise and jitter can be avoided.
+However, we must accept that the temporal accuracy of the beat locations will be
+quantised to the frame rate at which the beats are estimated (e.g., every 10ms),
+and so may still require some fine temporal adjustment. Perhaps more
+troubling is that the choice of metrical level will be determined
+by an algorithm and thus may bias the annotator who may have
+otherwise chosen to tap at a different metrical level.
+Finally, if the material is extremely complex, and “beyond the scope”
+of what existing approaches can reliably annotate, then there
+may be very little value in an initial automatic first pass
+if all beat estimates need subsequent correction.</p></li>
+<li><p>A promising approach for the automatic correction of annotations
+appeared in ISMIR 2019 paper by Drieger et al <span id="id3">[<a class="reference internal" href="../ch6_resources/references.html#id234">DSdHMuller19</a>]</span> which relies on a smart snapping of manually-tapped beat locations
+to peaks in a beat activation function (i.e., the prediction
+of a deep neural network) or an onset detection function, and is shown below.<br />
+While shown to be successful in improving the subjective quality
+of annotations according to musical experts, the full work-flow
+in the paper still recommends a final human intervention to confirm
+the precise annotations. Furthermore the success of the approach
+depends on the presence of peaks in the beat activation function
+at, or near, the “correct” locations.</p></li>
+</ul>
+<div class="figure align-center" id="tapcorrect">
+<a class="reference internal image-reference" href="../_images/tapcorrect.png"><img alt="Tap Correction Procedure Overivew." src="../_images/tapcorrect.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Tap Correction Procedure Overivew. Image taken from <span id="id4">[<a class="reference internal" href="../ch6_resources/references.html#id234">DSdHMuller19</a>]</span></span><a class="headerlink" href="#tapcorrect" title="Permalink to this image">¶</a></p>
+</div>
+<!--
+* <span style="color:blue"> Time-permitting it would also be good to add something about Meinard's
+work on transferring measure locations between different versions of the same
+piece, and I guess there must be some work about looking at applying
+MIDI annotations to audio recordings via alignment. Maybe Colin Raffel did this?
+</span> 
+-->
+<ul class="simple">
+<li><p>Finally, in the case of sequenced music, (e.g., electronic dance music) it may possible
+to be obtain a global tempo, beat, and downbeat locations automatically from
+the project settings. For example, in the Giant Steps tempo dataset <span id="id5">[<a class="reference internal" href="../ch6_resources/references.html#id235">KFH+15</a>]</span>
+tempo labels were obtained directly from the online music service Beatport, but
+but many cases were found to be ambiguous, or incorrect and required relabelling.
+Of course, it’s worth remembering that not all sequenced music need be of constant tempo and metre, nor are they necessarily easy to analyse (even in cases of constant tempo).</p></li>
+</ul>
+</div>
+<div class="section" id="example-annotated-datasets">
+<span id="annotatemap-datasets"></span><h2>Example annotated datasets<a class="headerlink" href="#example-annotated-datasets" title="Permalink to this headline">¶</a></h2>
+<p>To provide some additional perspective on annotation, and continue the thread
+from the previous point about the Giant Steps tempo dataset, we can take a look at a small
+set of example datasets and highlight some relevant insights concerning
+the type of musical material they contain, and the manner in which they
+were annotated.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This list is not intended to be an exhaustive list of annotated datasets,
+merely a subset that help support the tutorial content. For a list
+of MIR datasets of all kinds, please see Alexander Lerch’s Audio Content Analysis <a class="reference external" href="https://www.audiocontentanalysis.org/data-sets/">website</a>.</p>
+<p>We’ll learn more about <code class="docutils literal notranslate"><span class="pre">mirdata</span></code> in the practical part of the tutorial
+and the importance of loading and working with the correct version of a dataset.</p>
+</div>
+<ul class="simple">
+<li><p><strong>Hainsworth</strong> <span id="id6">[<a class="reference internal" href="../ch6_resources/references.html#id160">HM04</a>]</span>
+The <strong>Hainsworth</strong> dataset comprises 222 musical excerpts of around 1 minute
+each in length, which were organised into six categories by genre label:
+rock/pop, dance, jazz, folk, classical, and choral. It was created by
+Stephen Hainsworth as part of his PhD thesis on automatic music transcription.
+He produced the annotations in a two-stage process, first
+recording initial taps and then subsequently using a custom interface
+in Matlab to load and then manually correct the annotations guided
+by a time-frequency representation. Note, this dataset
+pre-dates even the earliest versions of Sonic Visualiser by a few years
+and thus Stephen needed to make his own tool for annotation correction.
+Of particular note was the inclusion of 20 or so choral examples
+which drew first attention in the beat tracking community to a particularly
+challenging class of musical signals to annotate, and analyse.
+The Hainsworth dataset remained in its original incarnation
+until 2014 when Böck et al <span id="id7">[<a class="reference internal" href="../ch6_resources/references.html#id240">BockKW14b</a>]</span> performed
+a set of revisions on the beat and downbeat annotations
+to correct some errors, and resulted in an increase in performance.</p></li>
+</ul>
+<!--
+-->
+<ul class="simple">
+<li><p><strong>HJDB</strong> <span id="id8">[<a class="reference internal" href="../ch6_resources/references.html#id187">HDF12</a>]</span>
+The <strong>HJDB</strong> dataset has 236 excerpts taken from 80s and 90s
+electronic dance music, specifically in the sub-genres of hardcore,
+jungle, and drum and bass. Initially it was only annotated
+in terms of downbeat positions (with no beat labels made).
+Subsequently a set of beat annotations, and revisions to the
+downbeats were made, and the current “reference” set of annotations
+can be found among the supplementary material for <span id="id9">[<a class="reference internal" href="../ch6_resources/references.html#id4">BockDK19</a>]</span>
+which can be found <a class="reference external" href="https://github.com/superbock/ISMIR2019">here</a>.
+This dataset is somewhat noteworthy as being among the first datasets
+to push back against the notion that electronic dance music is essentially
+very straightforward from the perspective of computational
+rhythm analysis.</p></li>
+</ul>
+<!--
+Do if time allows.
+* **JAAH** {cite}`eremenko18ismir`
+Say something interesting about this dataset !
+
+* **GTZAN** {cite}`tzanetakis02tsap,marchand2015swing`
+initially a genre dataset, but later with beat and downbeat annotations
+-->
+<ul class="simple">
+<li><p><strong>SMC</strong> <span id="id10">[<a class="reference internal" href="../ch6_resources/references.html#id237">HDZ+12</a>]</span>
+The <strong>SMC</strong> dataset contains 217 excerpts of 40s each in duration and
+was designed with a methodology for selecting the audio examples to annotate.
+Specifically, it was based on on the idea of building the dataset
+out of musical audio examples that would be difficult for (then) state-of-the-art
+beat tracking algorithms to analyse. Normally, we can discover
+when the state of the art fails by running it on an audio excerpt
+for which ground truth annotations exist, and then use one or more
+evaluation methods to estimate performance. Thus, the challenge here
+was to identify these kinds of excerpts without first annotating them.
+The approach was to build a committee of “good, but different” beat
+tracking algorithms and run them over a large collection of unannoted
+musical audio signals. Then, selecting a subset of excerpts based
+on the lack of concensus in the estimates of each committee member.
+In effect, if all algorithms give a different answer, then
+this can at least hint at interesting properties in the music
+that would make it worthwhile to annotate.
+Despite this dataset being compiled around 10 years (and thus predating
+almost all work in deep learning applied to rhythm), it remains
+a highly challenging dataset even for the most recent state-of-the-art
+approaches, of the kind we’ll explore later in the tutorial.</p></li>
+</ul>
+</div>
+<div class="section" id="summary">
+<span id="annotatemap-summary"></span><h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Annotation is hard!</p></li>
+<li><p>It takes a long time, and the more challenging
+the material to annotate the greater the likelihood of this being
+helpful for learning.</p></li>
+<li><p>On the plus side, annotation is a fantastic
+way to learn about the task of beat and downbeat estimation
+so it’s a really great excercise.</p></li>
+<li><p>We always need more data,
+so do consider doing some annotating!</p></li>
+<li><p>As hard as we try, annotation “mistakes” are made, so they made need correcting.</p></li>
+<li><p>This makes comparative evaluation more challenging, so it’s always worthwile
+to ensure you are using the most up to date version of any annotations.</p></li>
+</ul>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Recent work by Anglada-Tort et al <span id="id12">[<a class="reference internal" href="../ch6_resources/references.html#id236">ATHJ21</a>]</span> has propsed a means to eliminate jitter through a novel signal acquisition approach.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ch2_basics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="definition.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Definition by sound example</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="baseline.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Baseline approach</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Matthew E. P. Davies, Sebastian Bock, Magdalena Fuentes<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

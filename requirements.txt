@@ -1,0 +1,9 @@
+jupyter-book
+matplotlib
+numpy
+ghp-import
+librosa
+mirdata>=0.3.0
+madmom
+mir_eval
+tqdm
