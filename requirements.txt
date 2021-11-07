@@ -4,6 +4,7 @@ numpy
 ghp-import
 librosa
 mirdata>=0.3.0
+cython
 madmom
 mir_eval
 tqdm

@@ -1,0 +1,7 @@
+book/_build/*
+.DS_Store
+.idea/
+book/.DS_Store
+book/basics/.ipynb_checkpoints/
+common.egg-info 
+
