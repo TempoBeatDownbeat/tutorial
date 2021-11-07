@@ -39,7 +39,7 @@ Definitions of the acronyms are at the bottom of this page.
   -  
   - log-STFT
   - TCN
-  - BPM
+  - DBN
 * - Steinmetz {cite}`steinmetz2021wavebeat`
   - 2021
   - 
