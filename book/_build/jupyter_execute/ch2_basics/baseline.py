@@ -86,21 +86,21 @@ ax[1].label_outer()
 
 
 # We know that the mel spectrogram has time on the horizontal axis 
-# and frequency (in mel bands) on the vertical axis. So far so good...
+# and frequency (in mel bands) on the vertical axis. 
 # 
-# Very crudely we can look at vertical type structure as corresponding
-# the percussive type content (e.g., drums) and horizontal structure
+# Very crudely we can look at "vertical" structure as corresponding
+# the percussive type content (e.g., drums) and "horizontal" structure
 # as corresponding to harmonic content (e.g., pitched musical instruments 
 # like bass, and keyboard).
 # 
-# In the code example above we've used a kind of "default" set of parameters
-# to generate the mel spectorgam, but we have a few way to customise it if we want,
-# by changing:
+# In the code example above we've used a fairly arbitrary set of parameters
+# to generate the mel spectorgam, but we have a few ways to customise it if we want,
+# e.g., by changing:
 # * The range of frequencies from the lowest to highest
 # * The number of mel bands we choose to include
 # 
 # So, if we want to focus on the lower frequency part of the signal, 
-# we can limit the frequency range to 400Hz and we can use 40 mel bands over this range:
+# we can limit the frequency range to 400Hz and use 40 mel bands over this range:
 # 
 # ```{note}
 # If we want a lot of mel bands over a small frequency range like this, then
@@ -168,7 +168,7 @@ ipd.Audio(y[round(1.7*sr):round(6.82*sr)], rate=sr)
 # While many options exist, perhaps the most prolific is the
 # spectral flux function, which we can interpet as a measure
 # of how much the mel spectrogram changes between pairs
-# of adjacent vertical slices.
+# of adjacent vertical slices, i.e., short periods in time.
 # 
 # Let's take a look at the spectral flux function for the
 # initial wide-band mel spectrogram, and then contrast
@@ -268,27 +268,28 @@ ipd.Audio(y[round(1.7*sr):round(6.82*sr)], rate=sr)
 # 
 # The goal of periodicity detection is essentially to discover the tempo of the piece
 # of music. As we've seen and heard in the definitions by sound example section,
-# this tempo can be largely constant (in the case of the easy example and candombe)
+# this tempo can be largely constant (in the case of the easy and Candombe examples)
 # or highly variable as in the expressive example. 
 # 
 # When we talk about a periodicity we're talking about a measurement in time,
-# essentially what is the time between consecutive beats. By contrast,
+# essentially: what is the time between consecutive beats. By contrast,
 # when we talk about tempo, this is a rate, (something like 1/time) 
 # and thus is a measurement of the number of beats that occur over a specific
 # time period. Most commonly, we talk about the number of **beats per minute** (BPM)
 # but we could just as well talk about **beats per second** (BPS) and take this measurement in Hz.
-# In case, whether we're measuring time in seconds, or the number of frames
+# In any case, whether we're measuring time in seconds, or the number of frames
 # in a mel spectrogram, and whether we want tempo in BPM or BPS, it's very
 # straightforward to move between them both in terms of single values
 # and signals which are calculated over a range of lags or tempi. 
 # 
 # One of the most well-used techniques for the estimating the beat periodicity
-# in music signals is the **autocorrelation function**. In a high-level way
-# we duplicate the signal in question and slide one across the other 
-# and look for the time-delays (or lags) where the original signal and shifted
-# version are similar. 
+# in music signals is the **autocorrelation function**. In a high-level way,
+# we obtain the autocorrelation function by taking a copy of the signal in question 
+# and sliding one across the other. We can then look for the time-delays (or lags) 
+# where the original signal and shifted version are similar, and this creates
+# peaks in the autocorrelation function for us to interpret.
 # 
-# For the estimation of fundamental frequency say for musical notes or speech, 
+# For the estimation of fundamental frequency, say for musical notes or speech, 
 # it's possible to calculate the autocorrelation function directly on the samples of the waveform,
 # but we already have a nice intermediate, mid-level representation that we can use:
 # the spectral flux function. 
@@ -360,18 +361,17 @@ tempo = periodicity_estimation_plots(oenv=spectral_flux, sr=sr, hop_length=hop_l
 # To start with, let's compare the spectral flux function in the first plot
 # and the orange dashed global autocorrelation function the third plot.
 # 
-# * We can lots of regularly spaced peaks with some stronger than others.
+# * We can see lots of regularly spaced peaks with some stronger than others.
 # * **Note** these are not the beats! but rather the lags (or shifts) at which the spectral flux lines up well 
 # against itself
 # * If we look at the x-axis we can that we're measuring lags up to approximatey 4 seconds.
 # * The lag of one of these peaks is going to coincide with the tempo of the excerpt, the question is which one?
-# * If we think about what comfortable tapping rates might, then this kind guide which set of peaks are more 
-# likely than others.
+# * If we think about what comfortable tapping rates might, then this can guide us as to which peaks are more 
+# likely to correspond to the tempo than others.
 # * For example, the first peak is around 0.15s, which would correspond to 400 BPM and for all but the most 
-# talented percussists and drummers, this would would be very hard to tap.
-# * Constrasting this with the lag of the last peak is around 3.75s, which corresponds to a tempo of 16 BPM, and 
-# is below the lower tempo limit at which we can tap a steady beat (this is around 30 BPM) 
-# {cite}`london04hearing` 
+# talented percussists and drummers, this would would be very hard to tap consistently.
+# * Constrasting this with the lag of the last peak is around 3.75s, this corresponds to a tempo of 16 BPM, and 
+# is below the lower tempo limit at which we can tap a steady beat (around 30 BPM {cite}`london04hearing`). 
 # * Thus, we need to look somewhere in between.
 # * What can help us, and what `librosa` uses is a prior distribution over likely tempi.
 # * If we contrast the dotted orange line in the fourth plot, we can see the same autocorrelation funciton 
@@ -383,7 +383,7 @@ tempo = periodicity_estimation_plots(oenv=spectral_flux, sr=sr, hop_length=hop_l
 # But what about the blue lines in the third and fourth plots, and the tempogram in the second plot?
 # * So far, we've just looked at the global autocorrelation function, but much like
 # the mel spectrogram is split up into frames of short duration, we can use a similar
-# idea to generate a kind of time-periodicity represetnation (as opposed to a time-frequency representation)
+# idea to generate a kind of time-periodicity representation (as opposed to a time-frequency representation)
 # by calculating the autocorrelation over short windowed regions of the spectral flux (e.g., in order of several seconds each).
 # * If we map the lag scale into tempo (like moving from the third to the fourth plot), then we can observe
 # the kind of "tempo frequencies" which are present in the input, and if these vary through time. 
@@ -449,7 +449,7 @@ tempo_exp = periodicity_estimation_plots(oenv=spectral_flux_exp, sr=sr,
 
 
 # By inspection, we can that:
-# * There are far fewer peaks in the autocorrelation function, meaning the spectral flux function doesn't line up well against itself over many lags. But, we should expect that for a variable tempo. 
+# * There are far fewer peaks in the autocorrelation function, meaning the spectral flux function doesn't line up well against itself over many lags. But, we should expect that for a variable tempo piece. 
 # * The tempogram representation now has kind of "wavy" lines rather than straight ones, and the overlaid
 # "global" tempo estimate only partially lines up. 
 # * That said, the tempo of the piece (as determined by the median inter beat interval of the annotations) is approximately 77 BPM, and thus the estimated tempo is not correct.
@@ -582,11 +582,11 @@ dp_and_plot(oenv=spectral_flux, tempo=tempo, fps=fps, sr=sr,hop_length=hop_lengt
 # * In the bottom plot we have an intermediate function called the "cumulative score" which is generated 
 # internally by the dynamic programming function, together with the estimated beat positions. 
 # * This cumulative score is generated by a recursive calculation which, for each point in the spectral flux, 
-# looks back over itself across two beat periods, applies a weighting/penalty function (for which the penalty is lowest at exactly one beat in the past) and finds records the 
+# looks back over itself across two beat periods, applies a penalty function (for which the penalty is lowest at exactly one beat in the past) and finds records the 
 # maximum value and its index, the latter of which is stored in a "backlink".
-#     * The value of the exposed "tightness" parameter sets how narrow this weighting is, and favouring constant tempi.
+#     * The value of the exposed "tightness" parameter sets how narrow this weighting is, and for high values favours constant tempi.
 # * The cumulative score at this point, is then updated as a weighted sum between itself and the value of the spectral flux at that point. 
-#     * Here the "alpha" parameter (set to 0.5 in the standard `librosa` implementation) can be understood as how reactive the cumulative score is to timing changes. A high value can be understood as a kind of internal momentum of a fixed term, almost a kind of "interia", whereas a lower value might help in tracking expressive timing changes.
+#     * Here the "alpha" parameter (set to 0.5 in the standard `librosa` implementation) can be understood as how reactive the cumulative score is to timing changes. A high value can be understood as a kind of internal momentum of a fixed tempo, almost a kind of "interia", whereas a lower value might help in tracking expressive timing changes.
 # * While the bottom plot could give the impression that the beat estimates are recovered by finding the peaks of the cumulative score, **this is not the case**. 
 # * An initial starting point, a local maximum near the end of the cumulative score is found, and then the corresponding point in the backlink indicates where the beat immediately before should occur.
 # * We then find the value of the backlink at this new earlier beat, and repeat until we've worked out way right back to the start of the excerpt.
@@ -594,7 +594,7 @@ dp_and_plot(oenv=spectral_flux, tempo=tempo, fps=fps, sr=sr,hop_length=hop_lengt
 # **So, why did we plot the cumulative score?**
 # * Because it can be a useful means to understand the inertia of the dynamic programming model. 
 # * If we increase the value of alpha close to 1, we can see how the cumulative score can re-enforce the notion of a constant tempo in the piece.
-#     * A property which may be extremely useful when we need the beat tracker to kind of "push" it's way through regions of high syncopation or at points where there isn't a strongly induced beat.
+#     * This is a property which may be extremely useful when we need the beat tracker to kind of "push" it's way through regions of high syncopation or at points where there isn't a strongly induced beat.
 
 # In[12]:
 

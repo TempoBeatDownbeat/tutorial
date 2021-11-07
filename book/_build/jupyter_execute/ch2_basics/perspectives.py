@@ -118,7 +118,7 @@ ax[3].set(xlim=[0, len(x)/sr]);
 # to pull apart which spectral flux peaks are most likely to be beats. 
 # 
 # By contrast, the beat activation function presents a much cleaner signal with a set of peaks that neatly 
-# coincide with the annotated beat locations. In this way it's trivial to recover a sequence of beat times, and we can use a simple peak picker to do so, provided we set an appropriate threshold for our peak-picker. 
+# coincide with the annotated beat locations. In this way it's trivial to recover a sequence of beat times, and we can use a simple peak picker to do so, provided we set an appropriate threshold, e.g., 0.3.
 # 
 # Indeed, we can even confirm the high accuracy by calculating the f-measure using `mir_eval` by comparing
 # the peak-picked beats with the reference annotations.
@@ -229,9 +229,3 @@ print('Fmeasure:', round(mir_eval.beat.f_measure(ref_beats, est_beats), 3))
 # * why this might be the case
 # * how deep models can be trained to produce very convincing outputs
 # * and, what to do when they don't (it's not game over!)
-
-# In[ ]:
-
-
-
-

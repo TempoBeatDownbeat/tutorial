@@ -324,11 +324,6 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#temporal-convolutional-networks">
-   Temporal Convolutional networks
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#recurrent-networks">
    Recurrent networks
   </a>
@@ -342,6 +337,13 @@
   <a class="reference internal nav-link" href="#bi-directional-models">
    Bi-directional models
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#temporal-convolutional-networks">
+     Temporal Convolutional networks
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#hybrid-architectures">
@@ -439,40 +441,12 @@ Note that while <span class="math notranslate nohighlight">\(\mathbf{Y}\)</span>
 and shift-invariance (e.g. in time or frequency) can be used to reduce model complexity by reusing kernels’ weights with multiple inputs.</p>
 </div>
 </div>
-<div class="section" id="temporal-convolutional-networks">
-<h2>Temporal Convolutional networks<a class="headerlink" href="#temporal-convolutional-networks" title="Permalink to this headline">¶</a></h2>
-<p>A “simple” convolution is only able to consider the context up to a size linear in the depth of the network. This
-makes it challenging to apply them on sequential data, because the amount of context they can handle is small. In the
-context of beat and downbeat tracking systems, that might mean that the input granularity should be coarser if we want to
-guarantee that enough context is taken into account for e.g. downbeat tracking. Instead, Temporal Convolutional Networks (TCNs)
-<span id="id16">[<a class="reference internal" href="../ch6_resources/references.html#id2">BKK18</a>]</span> use dilated convolutions which enable exponentially large receptive fields! Formally, for a 1-D sequence input <span class="math notranslate nohighlight">\(\mathbf{x} \in \mathbb{R}^d_{in}\)</span> and a filter <span class="math notranslate nohighlight">\(f : \{0, \dots, k − 1\} \rightarrow \mathbb{R}\)</span>, the dilated convolution
-operation <span class="math notranslate nohighlight">\(F\)</span> on element <span class="math notranslate nohighlight">\(s\)</span> of the sequence is defined as:</p>
-<div class="math notranslate nohighlight">
-\[
-F(s) = \sum _{i=0} ^{k-1} f(i) x_{s−d·i} 
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(d\)</span> is the dilation factor, <span class="math notranslate nohighlight">\(k\)</span> is the filter size, and <span class="math notranslate nohighlight">\(s − d ·i\)</span> accounts for the direction of the past.
-Dilation is equivalent to introducing a fixed step between every two adjacent filter taps, i.e. skipping samples in the audio.
-When <span class="math notranslate nohighlight">\(d = 1\)</span>, a dilated convolution becomes a regular convolution.</p>
-<div class="figure align-default" id="tcn">
-<img alt="TCN" src="../_images/tcn.png" />
-<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Overview of the TCN structure from <span id="id17">[<a class="reference internal" href="../ch6_resources/references.html#id4">MBock19</a>]</span>.</span><a class="headerlink" href="#tcn" title="Permalink to this image">¶</a></p>
-</div>
-<p>Intuitively, TCNs perform convolutions across sub-sampled input representations and are good at learning sequential/temporal structure,
-since they retain the parallelisation property of standard CNNs but can handle much more context. Besides, TCNs can be trained
-far more efficiently than a RNN, LSTM or GRU from a computational perspective, and with much less number of weights. Given this
-advantages, TCNs are taking over these recurrent networks in many sequential tasks.</p>
-<div class="dropdown admonition">
-<p class="admonition-title">SPOILER ALERT!!</p>
-<p>Because of being light, fast to train and have great performance, we’re using TCNs for the hands on part of the tutorial!</p>
-</div>
-</div>
 <div class="section" id="recurrent-networks">
 <h2>Recurrent networks<a class="headerlink" href="#recurrent-networks" title="Permalink to this headline">¶</a></h2>
 <p>Many approaches exploited recurrent neural networks given their suitability to process sequential data. In theory, recurrent architectures are flexible in terms of the temporal context they can model, which makes them appealing for music applications.
-In practice there are some limitations on the amount of context they can effectively learn <span id="id18">[<a class="reference internal" href="../ch6_resources/references.html#id234">GTH19</a>]</span>, and although it is clear that they can learn close metrical levels such as beats and downbeats
-<span id="id19">[<a class="reference internal" href="../ch6_resources/references.html#id214">BockKW16</a>]</span>, is not clear if they can successfully learn interrelationships between farther temporal scales in music.</p>
-<p>Unlike CNNs which are effective at modelling fixed-length local interactions, <em>recurrent neural networks</em> (RNNs) are good in modelling variable-length long-term interactions. RNNs exploit recurrent connections since they are formulated as <span id="id20">[<a class="reference internal" href="../ch6_resources/references.html#id221">GBC16</a>]</span>:</p>
+In practice there are some limitations on the amount of context they can effectively learn <span id="id16">[<a class="reference internal" href="../ch6_resources/references.html#id234">GTH19</a>]</span>, and although it is clear that they can learn close metrical levels such as beats and downbeats
+<span id="id17">[<a class="reference internal" href="../ch6_resources/references.html#id214">BockKW16</a>]</span>, is not clear if they can successfully learn interrelationships between farther temporal scales in music.</p>
+<p>Unlike CNNs which are effective at modelling fixed-length local interactions, <em>recurrent neural networks</em> (RNNs) are good in modelling variable-length long-term interactions. RNNs exploit recurrent connections since they are formulated as <span id="id18">[<a class="reference internal" href="../ch6_resources/references.html#id221">GBC16</a>]</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align}
@@ -482,11 +456,11 @@ In practice there are some limitations on the amount of context they can effecti
 \end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mathbf{h}_t\)</span> is a hidden <em>state vector</em> that stores information at time <span class="math notranslate nohighlight">\(t\)</span>, <span class="math notranslate nohighlight">\(f_y\)</span> and <span class="math notranslate nohighlight">\(f_h\)</span> are the non-linearities of the output and hidden state respectively, and <span class="math notranslate nohighlight">\(\mathbf{W}_y, \mathbf{W}_h\)</span> and <span class="math notranslate nohighlight">\(\mathbf{U}\)</span> are matrices of trainable weights.
 An RNN integrates information over time up to time step <span class="math notranslate nohighlight">\(t\)</span> to estimate the state vector <span class="math notranslate nohighlight">\(\mathbf{h}_t\)</span>, being suitable to model sequential data.
-Note that learning the weights <span class="math notranslate nohighlight">\(\mathbf{W}_y, \mathbf{W}_h\)</span> and <span class="math notranslate nohighlight">\(\mathbf{U}\)</span> in a RNN is challenging given the dependency of the gradient on the entire state sequence <span id="id21">[<a class="reference internal" href="../ch6_resources/references.html#id226">McF18</a>]</span>. In practice, <em>back-propagation through time</em> is used
-<span id="id22">[<a class="reference internal" href="../ch6_resources/references.html#id149">W+90</a>]</span>, which consists in unrolling the equation above up to <span class="math notranslate nohighlight">\(k\)</span> time steps and applying standard back propagation. Given the accumulative effect of applying <span class="math notranslate nohighlight">\(\mathbf{U}\)</span> when unrolling the equation above, the gradient values tend to either vanish or explode if <span class="math notranslate nohighlight">\(k\)</span> is too big, a problem known as the <em>vanishing and exploding gradient problem</em>. For that reason, in practice the value of <span class="math notranslate nohighlight">\(k\)</span> is limited to account for relatively short sequences.</p>
+Note that learning the weights <span class="math notranslate nohighlight">\(\mathbf{W}_y, \mathbf{W}_h\)</span> and <span class="math notranslate nohighlight">\(\mathbf{U}\)</span> in a RNN is challenging given the dependency of the gradient on the entire state sequence <span id="id19">[<a class="reference internal" href="../ch6_resources/references.html#id226">McF18</a>]</span>. In practice, <em>back-propagation through time</em> is used
+<span id="id20">[<a class="reference internal" href="../ch6_resources/references.html#id149">W+90</a>]</span>, which consists in unrolling the equation above up to <span class="math notranslate nohighlight">\(k\)</span> time steps and applying standard back propagation. Given the accumulative effect of applying <span class="math notranslate nohighlight">\(\mathbf{U}\)</span> when unrolling the equation above, the gradient values tend to either vanish or explode if <span class="math notranslate nohighlight">\(k\)</span> is too big, a problem known as the <em>vanishing and exploding gradient problem</em>. For that reason, in practice the value of <span class="math notranslate nohighlight">\(k\)</span> is limited to account for relatively short sequences.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The most commonly used variations of RNNs, that were designed to mitigate the vanishing/exploding problem of the gradient, include the addition of <em>gates</em> that control the flow of information through the network. The most popular ones in MIR applications are <em>long-short memory units</em> (LSTMs) <span id="id23">[<a class="reference internal" href="../ch6_resources/references.html#id153">HS97</a>]</span> and <em>gated recurrent units</em> (GRUs) <span id="id24">[<a class="reference internal" href="../ch6_resources/references.html#id14">CVMerrienboerG+14</a>]</span>. Since they show similar
+<p>The most commonly used variations of RNNs, that were designed to mitigate the vanishing/exploding problem of the gradient, include the addition of <em>gates</em> that control the flow of information through the network. The most popular ones in MIR applications are <em>long-short memory units</em> (LSTMs) <span id="id21">[<a class="reference internal" href="../ch6_resources/references.html#id153">HS97</a>]</span> and <em>gated recurrent units</em> (GRUs) <span id="id22">[<a class="reference internal" href="../ch6_resources/references.html#id14">CVMerrienboerG+14</a>]</span>. Since they show similar
 empirical results, we only discuss GRUs below.</p>
 </div>
 </div>
@@ -512,15 +486,43 @@ standard recurrent equation by <span class="math notranslate nohighlight">\(\hat
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>The reset variables allow GRUs to successfully model long-term interactions, and perform comparably to LSTMs, but GRUs are simpler since LSTMs have three gate vectors and one extra <em>memory</em> gate. Empirical studies show that both networks perform comparably
-while GRUs are faster to train <span id="id25">[<a class="reference internal" href="../ch6_resources/references.html#id16">GSKoutnik+16</a>, <a class="reference internal" href="../ch6_resources/references.html#id15">JZS15</a>]</span>.</p>
+while GRUs are faster to train <span id="id23">[<a class="reference internal" href="../ch6_resources/references.html#id16">GSKoutnik+16</a>, <a class="reference internal" href="../ch6_resources/references.html#id15">JZS15</a>]</span>.</p>
 </div>
 </div>
 <div class="section" id="bi-directional-models">
 <h2>Bi-directional models<a class="headerlink" href="#bi-directional-models" title="Permalink to this headline">¶</a></h2>
 <p>GRUs and RNNs in general are designed to integrate information in one direction, e.g. in an audio application they integrate information forward in time. However, it can be beneficial to integrate information in both directions, and so has been the case for neural networks
-in audio applications such as beat tracking <span id="id26">[<a class="reference internal" href="../ch6_resources/references.html#id215">BockS11</a>]</span> or environmental sound detection <span id="id27">[<a class="reference internal" href="../ch6_resources/references.html#id217">PHV16</a>]</span>. A bi-directional recurrent neural network (Bi-RNN) <span id="id28">[<a class="reference internal" href="../ch6_resources/references.html#id152">SP97</a>]</span> in the context of audio consists of two RNNs running
+in audio applications such as beat tracking <span id="id24">[<a class="reference internal" href="../ch6_resources/references.html#id215">BockS11</a>]</span> or environmental sound detection <span id="id25">[<a class="reference internal" href="../ch6_resources/references.html#id217">PHV16</a>]</span>. A bi-directional recurrent neural network (Bi-RNN) <span id="id26">[<a class="reference internal" href="../ch6_resources/references.html#id152">SP97</a>]</span> in the context of audio consists of two RNNs running
 in opposite time directions with their hidden vectors <span class="math notranslate nohighlight">\(\mathbf{h}_t ^f\)</span> and <span class="math notranslate nohighlight">\(\mathbf{h}_t ^b\)</span> being concatenated, so the output <span class="math notranslate nohighlight">\(h_t\)</span> at time <span class="math notranslate nohighlight">\(t\)</span> has information about the entire sequence. Unless the application is online, Bi-RNNs are usually preferred due to better performance
-<span id="id29">[<a class="reference internal" href="../ch6_resources/references.html#id226">McF18</a>]</span>.</p>
+<span id="id27">[<a class="reference internal" href="../ch6_resources/references.html#id226">McF18</a>]</span>.</p>
+<div class="section" id="temporal-convolutional-networks">
+<span id="dnns-tcnns"></span><h3>Temporal Convolutional networks<a class="headerlink" href="#temporal-convolutional-networks" title="Permalink to this headline">¶</a></h3>
+<p>A “simple” convolution is only able to consider the context up to a size linear in the depth of the network. This
+makes it challenging to apply them on sequential data, because the amount of context they can handle is small. In the
+context of beat and downbeat tracking systems, that might mean that the input granularity should be coarser if we want to
+guarantee that enough context is taken into account for e.g. downbeat tracking. Instead, Temporal Convolutional Networks (TCNs)
+<span id="id28">[<a class="reference internal" href="../ch6_resources/references.html#id2">BKK18</a>]</span> use dilated convolutions which enable exponentially large receptive fields! Formally, for a 1-D sequence input <span class="math notranslate nohighlight">\(\mathbf{x} \in \mathbb{R}^d_{in}\)</span> and a filter <span class="math notranslate nohighlight">\(f : \{0, \dots, k − 1\} \rightarrow \mathbb{R}\)</span>, the dilated convolution
+operation <span class="math notranslate nohighlight">\(F\)</span> on element <span class="math notranslate nohighlight">\(s\)</span> of the sequence is defined as:</p>
+<div class="math notranslate nohighlight">
+\[
+F(s) = \sum _{i=0} ^{k-1} f(i) x_{s−d·i} 
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(d\)</span> is the dilation factor, <span class="math notranslate nohighlight">\(k\)</span> is the filter size, and <span class="math notranslate nohighlight">\(s − d ·i\)</span> accounts for the direction of the past.
+Dilation is equivalent to introducing a fixed step between every two adjacent filter taps, i.e. skipping samples in the audio.
+When <span class="math notranslate nohighlight">\(d = 1\)</span>, a dilated convolution becomes a regular convolution.</p>
+<div class="figure align-default" id="tcn">
+<img alt="TCN" src="../_images/tcn.png" />
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Overview of the TCN structure from <span id="id29">[<a class="reference internal" href="../ch6_resources/references.html#id4">MBock19</a>]</span>.</span><a class="headerlink" href="#tcn" title="Permalink to this image">¶</a></p>
+</div>
+<p>Intuitively, TCNs perform convolutions across sub-sampled input representations and are good at learning sequential/temporal structure,
+since they retain the parallelisation property of standard CNNs but can handle much more context. Besides, TCNs can be trained
+far more efficiently than a RNN, LSTM or GRU from a computational perspective, and with much less number of weights. Given this
+advantages, TCNs are taking over these recurrent networks in many sequential tasks.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">SPOILER ALERT!!</p>
+<p>Because of being light, fast to train and have great performance, we’re using TCNs for the hands on part of the tutorial!</p>
+</div>
+</div>
 </div>
 <div class="section" id="hybrid-architectures">
 <h2>Hybrid architectures<a class="headerlink" href="#hybrid-architectures" title="Permalink to this headline">¶</a></h2>

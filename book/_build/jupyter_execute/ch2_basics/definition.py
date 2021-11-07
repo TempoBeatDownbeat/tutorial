@@ -228,7 +228,7 @@ ipd.Audio(0.6*x2+0.25*y_beats2+0.25*y_downbeats2, rate=SR)
 # * Wait, why are there no beats in the first 5 seconds of the piece? 
 # 
 # In order to try to address these points we need to consider how this annotation
-# was made. We'll see more "how to annotate" in the next section, but for now
+# was made. We'll see more about "how to annotate" in the next section, but for now
 # we can make some headway in addressing these points by looking at a score representation
 # for the very beginning of the piece.
 
@@ -250,7 +250,7 @@ ipd.Audio(0.6*x2+0.25*y_beats2+0.25*y_downbeats2, rate=SR)
 # at the discretion of the performer. 
 # While these three notes take up almost the first
 # 5 seconds of the piece, from a music notation perspective
-# they are all 1/16th notes, and thus all fall **within** a single notated beat (i.e., one 1/4 note)
+# they are all 1/16th notes, and thus all fall **within** a single notated beat (i.e., one 1/4 note).
 # On this basis, if we are to rely on the score, then 
 # none of the notes should be tapped at the start, nor
 # when the motif repeats around the 30s mark.
@@ -258,7 +258,7 @@ ipd.Audio(0.6*x2+0.25*y_beats2+0.25*y_downbeats2, rate=SR)
 # The score also tells us the time-signature of the piece is 2/4 and thus
 # we should count the beats in groups of 2 rather than 4. 
 # This also lets us know which notes correspond to the beat-level 
-# and thus the rate at which we should tap (if we want to stick to the score).
+# and thus the rate at which we should tap (again, if we want to stick to the score).
 # 
 # Finally, concerning the beginning of the first complete bar,
 # i.e., the point at which the first overlaid pulse can be heard, 
@@ -323,10 +323,10 @@ plt.xlim(0, len(x3)/sr);
 ipd.Audio(0.6*x3+0.25*y_beats3+0.25*y_downbeats3, rate=SR) 
 
 
-# The specific challenge here, lies not only in the rhythmic density
+# The specific challenge here lies not only in the rhythmic density
 # of the performance, but in understanding the metrical organisation.
 # For those familiar with Candombe this is a straightforward
-# excerise and as such it can be tapped to and counted in an unambiguous
+# excerise and as such it can be tapped and counted in an unambiguous
 # way, but to the untrained ear (or algorithm!) it can be much more 
 # challenging to understanding how to tap along. 
 # 

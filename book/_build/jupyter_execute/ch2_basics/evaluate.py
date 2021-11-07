@@ -23,14 +23,14 @@
 # 
 # Indeed, there is nothing wrong *at all* with doing evaluation this way and 
 # in line with our understanding of the beat as a perceptual construct, this 
-# is our baseline position... essentially "does it sound right when I hear it played back?"
+# is our baseline position... essentially "*does it sound right when I hear it played back?*"
 # 
 # However, the design and execution of large scale evaluation of beat (or downbeat)
 # tracking algorithms where rating scales are used to grade performance 
 # is time-consuming and expensive (it requires real-time listening possibly multiple times).
 # It is also difficult to repeat in an exact way and to determine 
 # a set of unambiguous judging criteria. Note, since most people
-# only "reletaive" rather than "perfect tempo" it's rather hard to 
+# only have "reletaive" rather than "perfect tempo" it's rather hard to 
 # design an subjective experiment for absolute tempo perception
 # without the instantion of the tempo in terms of beats. 
 # 
@@ -234,7 +234,7 @@ print('Cemgil:', round(mir_eval.beat.cemgil(ref_beats, bad_beats)[0], 3))
 # 
 # Via the **combination** of these two scores we can begin to make some interpretation about
 # the qualitative nature of the relationship between estimated beats
-# and annotations. Which in this case, would tell us that 
+# and annotations. Which in this case would tell us that 
 # the metrical level and phase of the beat estimates are 
 # the same as the ground truth annotations, but they
 # are poorly localised. 
@@ -250,7 +250,7 @@ print('Cemgil:', round(mir_eval.beat.cemgil(ref_beats, bad_beats)[0], 3))
 # of beat tracking accuracy. Which is to say that each estimated beat is 
 # treated as an isolated point in time. So, we have no notion of 
 # a beat interval to work with in evaluation. This is largely
-# fine for onset detection and structurally boundary detection,
+# fine for onset detection and structural boundary detection,
 # but somewhat sub-optimal for temporal data with some strong
 # periodic organisation like musical beats.
 # 
@@ -273,9 +273,9 @@ print('Cemgil:', round(mir_eval.beat.cemgil(ref_beats, bad_beats)[0], 3))
 # * The first is that 
 # we only consider beat *i* to be accurate if it falls within the tolerance
 # window (*more on how that's defined in a moment*) and 
-# that beat *i-1* also falls within its respective tolerance window.
-# As shown in figure below. Note, in addition we require
-# that the inter-beat-interval is also consistent
+# that beat *i-1* also falls within its respective tolerance window, 
+# as shown in figure below. Note, in addition we require
+# that the inter-beat-interval also be consistent
 # with the inter-annotation-intereval. 
 
 # ```{figure} ../assets/ch2_basics/figs/continuity1.png
@@ -291,7 +291,7 @@ print('Cemgil:', round(mir_eval.beat.cemgil(ref_beats, bad_beats)[0], 3))
 # * Secondly, and to try to account for some metrical ambiguity in 
 # what might be an acceptable sequence of beat estimates,
 # we can generate multiple metrical variations of the annotations
-# and evaluate against each of these in turn, picking the
+# and evaluate against each of these in turn, picking the best
 # score available. These metrical variations typically constitute
 #     * The same metrical level and "in-phase"
 #     * The same metrical level, but tapped on the "off-beat"
@@ -383,10 +383,10 @@ print({m:v for m,v in zip(['CMLc', 'CMLt', 'AMLc', 'AMLt'],
 
 # So, 0.0 all round! Since the AMLx scores are zero, we know the CMLx ones must be too. 
 # But, we only shifted the bad beats around by just under 70ms, and technically this
-# would be okay according to the +/- 17.5% tolerance windows for phase. 
+# would be okay according to the +/- 17.5% tolerance windows for phase accuracy. 
 # Where this fails is in the periodicity criteria, which is that the 
 # inter-beat-intervals alternate between being greater than and less than
-# the allowed inter-annotation-interval.
+# the allowed inter-annotation-interval. 
 
 # ## Beat Evaluation Perspectives
 # 
