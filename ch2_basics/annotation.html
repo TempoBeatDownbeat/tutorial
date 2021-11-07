@@ -339,7 +339,7 @@
                 
   <div class="section" id="how-do-we-annotate">
 <span id="annotatemap"></span><h1>How do we annotate?<a class="headerlink" href="#how-do-we-annotate" title="Permalink to this headline">¶</a></h1>
-<p>Within the context of the kind of data-driven approaches to the estimation
+<p>Within the context of the kind of data-driven approaches for the estimation
 of tempo, beats, and downbeats we explore in this tutorial, a critical aspect is
 how to acquire some data to learn from, and ultimately to evaluate upon.</p>
 <p>The “data” in question refers to annotations of beat and downbeat
@@ -347,7 +347,7 @@ locations from which either: i) a global value tempo for a roughly
 constant tempo piece of music; or ii) a local tempo contour can be derived.</p>
 <p>The workflow by which beat and downbeat annotations can be obtained
 typically involves an interative process departing from an initial estimate,
-e.g., marking beat locations only, correcting timing errors, followed by
+e.g., marking beat locations only, and then correcting timing errors, followed by
 a labelling process to mark the metrical position of each beat.</p>
 <p>This initial estimate could be obtained by hand, i.e., by tapping
 along with the musical audio excerpt in a software such as <code class="docutils literal notranslate"><span class="pre">Sonic</span> <span class="pre">Visualiser</span></code>,
@@ -362,9 +362,13 @@ in <code class="docutils literal notranslate"><span class="pre">Sonic</span> <sp
 The excerpt in quesiton is the straightforward musical excerpt
 from the previous section that we’ve already here, and is around 25s in duration
 with a constant tempo and 4/4 metre.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The clip is sped up by a factor of 5, so you shouldn’t expect to hear anything!</p>
+</div>
 <div class="figure align-center" id="annotate">
 <a class="reference internal image-reference" href="../_images/annotation_process.gif"><img alt="Annotation example in Sonic Visualiser." src="../_images/annotation_process.gif" style="width: 1200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Annotation example in Sonic Visualiser.</span><a class="headerlink" href="#annotate" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Manual annotation example in Sonic Visualiser.</span><a class="headerlink" href="#annotate" title="Permalink to this image">¶</a></p>
 </div>
 <p>The stages of the process as follows:</p>
 <ol class="simple">
@@ -378,14 +382,14 @@ clicks of short duration. As becomes clear from watching the clip above,
 the timing of the taps is not super precise! As such many of the beats need to be altered to compensate for temporal imprecision.
 While this could simply be slopping timing on the part of the
 tapper, in practice it is likely a a combination of human motor noise and jitter <a class="footnote-reference brackets" href="#id11" id="id1">1</a> in the acquisition of the keyboard taps.
-In this case, there are not duplicated or missing taps
-(besides those of the first two bars), and so the editing operations are exclusively
+In this case, there are no duplicated or missing taps
+(besides those of the first two bars), and so the tap-editing operations are exclusively
 performed by shifting the annotations – using the waveform as a guide – and listening back for perceptual accuracy.</p></li>
 <li><p>Once done, the annotations for the first two bars are marked approximately by hand
 and the main listening and editing process in the previous step is applied again.</p></li>
 <li><p>In this excerpt, there is a constant 4/4 metre throughout, thus it is straightforward
 to have Sonic Visualiser apply two-level labels to the beat locations, 1.1, 1.2., 1.3,
-1.4, 2.1, 2.2., etc. where each ‘x.1’ corresponds to a downbeat. Although, in more complex cases containing changes in metre, it may be necessary to edit the annotation labels by hand. Having performed this labelling, a final listen and minor edits are made, the process is complete and the annotations can be exported.</p></li>
+1.4, 2.1, 2.2., etc. where each ‘x.1’ corresponds to a downbeat. However, in more complex cases containing changes in metre, it may be necessary to edit the annotation labels by hand. Having performed this labelling, a final listen and minor edits are made, the process is complete and the annotations can be exported.</p></li>
 </ol>
 </div>
 <div class="section" id="perspectives-on-manual-annotation">
@@ -393,13 +397,13 @@ to have Sonic Visualiser apply two-level labels to the beat locations, 1.1, 1.2.
 <p>At this point it is worth a little reflection the practical aspects of the manual annotation and editing process. The musical excerpt is under 25s in duration
 yet the total time taken to complete the annotation is a little over 4 minutes
 (approximately a <strong>10x</strong> overhead). Concerning the number and type of edits, we find 8
-insertions: corresponding to the first two bars, 0 deletions, and 21 shifting operations (including some beats shifted more than once!) for a total of 32 beats.</p>
+insertions: corresponding to the first two bars, 0 deletions, and 21 shifting operations (including some beats shifted more than once) for a total of 32 beat annotations.</p>
 <p>For brevity, the annotation corrections were made rather quickly with an emphasis on
 approximate perceptual accuracy as opposed to extremely precise hand-labelling.
 A more “forensic” analysis of the waveform (perhaps supported by other
 time-frequency representations) and additional listening back would further increase the
 annotation time. Of course, the better the real-time taps the fewer repeated listens and
-editing operations, but in the limit even where no edits are required, this would still
+editing operations, but in the limit even when no edits are required, this would still
 requires two complete listens (once to tap, once to confirm).</p>
 <p>If we then begin to consider more complex musical material, e.g., with challenging
 musical properties such as syncopation, expressive timing, metrical changes, lack of
@@ -467,13 +471,13 @@ Of course, it’s worth remembering that not all sequenced music need be of cons
 <div class="section" id="example-annotated-datasets">
 <span id="annotatemap-datasets"></span><h2>Example annotated datasets<a class="headerlink" href="#example-annotated-datasets" title="Permalink to this headline">¶</a></h2>
 <p>To provide some additional perspective on annotation, and continue the thread
-from the previous point about the Giant Steps tempo dataset, we can take a look at a small
-set of example datasets and highlight some relevant insights concerning
+from the previous point about the Giant Steps tempo dataset, we can take a look at a
+small set of example datasets and highlight some relevant insights concerning
 the type of musical material they contain, and the manner in which they
 were annotated.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This list is not intended to be an exhaustive list of annotated datasets,
+<p>This list is in no way intended to be exhaustive,
 merely a subset that help support the tutorial content. For a list
 of MIR datasets of all kinds, please see Alexander Lerch’s Audio Content Analysis <a class="reference external" href="https://www.audiocontentanalysis.org/data-sets/">website</a>.</p>
 <p>We’ll learn more about <code class="docutils literal notranslate"><span class="pre">mirdata</span></code> in the practical part of the tutorial
@@ -502,7 +506,7 @@ to correct some errors, and resulted in an increase in performance.</p></li>
 The <strong>HJDB</strong> dataset has 236 excerpts taken from 80s and 90s
 electronic dance music, specifically in the sub-genres of hardcore,
 jungle, and drum and bass. Initially it was only annotated
-in terms of downbeat positions (with no beat labels made).
+in terms of downbeat positions (with no beat positions).
 Subsequently a set of beat annotations, and revisions to the
 downbeats were made, and the current “reference” set of annotations
 can be found among the supplementary material for <span id="id9">[<a class="reference internal" href="../ch6_resources/references.html#id5">BockDK19</a>]</span>
@@ -514,24 +518,24 @@ rhythm analysis.</p></li>
 <li><p><strong>SMC</strong> <span id="id10">[<a class="reference internal" href="../ch6_resources/references.html#id238">HDZ+12</a>]</span>
 The <strong>SMC</strong> dataset contains 217 excerpts of 40s each in duration and
 was designed with a methodology for selecting the audio examples to annotate.
-Specifically, it was based on on the idea of building the dataset
+Specifically, it was based on the idea of building a dataset
 out of musical audio examples that would be difficult for (then) state-of-the-art
 beat tracking algorithms to analyse. Normally, we can discover
 when the state of the art fails by running it on an audio excerpt
 for which ground truth annotations exist, and then use one or more
 evaluation methods to estimate performance. Thus, the challenge here
-was to identify these kinds of excerpts without first annotating them.
+was to identify these kinds of excerpts <strong>without</strong> annotating them first.
 The approach was to build a committee of “good, but different” beat
-tracking algorithms and run them over a large collection of unannoted
-musical audio signals. Then, selecting a subset of excerpts based
-on the lack of concensus in the estimates of each committee member.
-In effect, if all algorithms give a different answer, then
-this can at least hint at interesting properties in the music
+tracking algorithms and run them over a large collection of unannotated
+musical audio signals. Next, a subset of excerpts was selected based
+on the lack of concensus among the estimates of each committee member.
+In effect, if all algorithms gave a different answer, then
+this would at least hint at interesting properties in the music
 that would make it worthwhile to annotate.
-Despite this dataset being compiled around 10 years (and thus predating
+Despite this dataset being compiled around 10 years ago (and thus predating
 almost all work in deep learning applied to rhythm), it remains
-a highly challenging dataset even for the most recent state-of-the-art
-approaches, of the kind we’ll explore later in the tutorial.</p></li>
+highly challenging even for the most recent state-of-the-art
+approaches of the kind we’ll explore later in the tutorial.</p></li>
 </ul>
 </div>
 <div class="section" id="summary">

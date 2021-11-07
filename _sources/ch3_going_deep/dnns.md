@@ -85,42 +85,6 @@ CNNs are suitable to problems that have two characteristics {cite}`McFee2018`:  
 and shift-invariance (e.g. in time or frequency) can be used to reduce model complexity by reusing kernels' weights with multiple inputs.
 ```
  
- (dnns:tcnns)=
-#### Temporal Convolutional networks
-
-A "simple" convolution is only able to consider the context up to a size linear in the depth of the network. This
-makes it challenging to apply them on sequential data, because the amount of context they can handle is small. In the 
-context of beat and downbeat tracking systems, that might mean that the input granularity should be coarser if we want to
-guarantee that enough context is taken into account for e.g. downbeat tracking. Instead, Temporal Convolutional Networks (TCNs)
-{cite}`tcns` use dilated convolutions which enable exponentially large receptive fields! Formally, for a 1-D sequence input $\mathbf{x} \in \mathbb{R}^d_{in}$ and a filter $f : \{0, \dots, k − 1\} \rightarrow \mathbb{R}$, the dilated convolution
-operation $F$ on element $s$ of the sequence is defined as:
-
-$$
-F(s) = \sum _{i=0} ^{k-1} f(i) x_{s−d·i} 
-$$
-
-where $d$ is the dilation factor, $k$ is the filter size, and $s − d ·i$ accounts for the direction of the past. 
-Dilation is equivalent to introducing a fixed step between every two adjacent filter taps, i.e. skipping samples in the audio.
-When $d = 1$, a dilated convolution becomes a regular convolution.
-
-```{figure} ../assets/ch3_going_deep/figs/tcn.png
----
-alt: TCN
-name: TCN
----
-Overview of the TCN structure from {cite}`matthewdavies2019temporal`.
-```
-
-Intuitively, TCNs perform convolutions across sub-sampled input representations and are good at learning sequential/temporal structure,
- since they retain the parallelisation property of standard CNNs but can handle much more context. Besides, TCNs can be trained
-far more efficiently than a RNN, LSTM or GRU from a computational perspective, and with much less number of weights. Given this
-advantages, TCNs are taking over these recurrent networks in many sequential tasks. 
-
-```{admonition} SPOILER ALERT!!
-:class: dropdown
-Because of being light, fast to train and have great performance, we're using TCNs for the hands on part of the tutorial!
-```
- 
 (dnns:rnns)=
 ### Recurrent networks
 
@@ -183,6 +147,44 @@ GRUs and RNNs in general are designed to integrate information in one direction,
 in audio applications such as beat tracking {cite}`bock2011enhanced` or environmental sound detection {cite}`parascandolo2016recurrent`. A bi-directional recurrent neural network (Bi-RNN) {cite}`schuster1997bidirectional` in the context of audio consists of two RNNs running 
 in opposite time directions with their hidden vectors $\mathbf{h}_t ^f$ and $\mathbf{h}_t ^b$ being concatenated, so the output $h_t$ at time $t$ has information about the entire sequence. Unless the application is online, Bi-RNNs are usually preferred due to better performance
 {cite}`McFee2018`.
+
+
+(dnns:tcnns)=
+#### Temporal Convolutional networks
+
+A "simple" convolution is only able to consider the context up to a size linear in the depth of the network. This
+makes it challenging to apply them on sequential data, because the amount of context they can handle is small. In the 
+context of beat and downbeat tracking systems, that might mean that the input granularity should be coarser if we want to
+guarantee that enough context is taken into account for e.g. downbeat tracking. Instead, Temporal Convolutional Networks (TCNs)
+{cite}`tcns` use dilated convolutions which enable exponentially large receptive fields! Formally, for a 1-D sequence input $\mathbf{x} \in \mathbb{R}^d_{in}$ and a filter $f : \{0, \dots, k − 1\} \rightarrow \mathbb{R}$, the dilated convolution
+operation $F$ on element $s$ of the sequence is defined as:
+
+$$
+F(s) = \sum _{i=0} ^{k-1} f(i) x_{s−d·i} 
+$$
+
+where $d$ is the dilation factor, $k$ is the filter size, and $s − d ·i$ accounts for the direction of the past. 
+Dilation is equivalent to introducing a fixed step between every two adjacent filter taps, i.e. skipping samples in the audio.
+When $d = 1$, a dilated convolution becomes a regular convolution.
+
+```{figure} ../assets/ch3_going_deep/figs/tcn.png
+---
+alt: TCN
+name: TCN
+---
+Overview of the TCN structure from {cite}`matthewdavies2019temporal`.
+```
+
+Intuitively, TCNs perform convolutions across sub-sampled input representations and are good at learning sequential/temporal structure,
+ since they retain the parallelisation property of standard CNNs but can handle much more context. Besides, TCNs can be trained
+far more efficiently than a RNN, LSTM or GRU from a computational perspective, and with much less number of weights. Given this
+advantages, TCNs are taking over these recurrent networks in many sequential tasks. 
+
+```{admonition} SPOILER ALERT!!
+:class: dropdown
+Because of being light, fast to train and have great performance, we're using TCNs for the hands on part of the tutorial!
+```
+
 
 ### Hybrid architectures
 

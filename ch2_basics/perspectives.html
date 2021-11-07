@@ -438,7 +438,7 @@ signals, and in turn, we have many more peaks in the spectral flux signal than t
 positions. Thus, the process of inferring the beat from this signal relies on some quite hard work
 to pull apart which spectral flux peaks are most likely to be beats.</p>
 <p>By contrast, the beat activation function presents a much cleaner signal with a set of peaks that neatly
-coincide with the annotated beat locations. In this way it’s trivial to recover a sequence of beat times, and we can use a simple peak picker to do so, provided we set an appropriate threshold for our peak-picker.</p>
+coincide with the annotated beat locations. In this way it’s trivial to recover a sequence of beat times, and we can use a simple peak picker to do so, provided we set an appropriate threshold, e.g., 0.3.</p>
 <p>Indeed, we can even confirm the high accuracy by calculating the f-measure using <code class="docutils literal notranslate"><span class="pre">mir_eval</span></code> by comparing
 the peak-picked beats with the reference annotations.</p>
 <div class="cell docutils container">
