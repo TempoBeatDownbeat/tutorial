@@ -10,7 +10,7 @@ addressed compact deep neural networks for the analysis of rhythmic structure, a
 computational ethnomusicology. From 2014-2019, Matthew coordinated the SMC group at 
 INESC TEC, and was an Invited Assistant Professor in the University of Porto. 
 
-[website](https://mepdavies.github.io)
+<a href="https://mepdavies.github.io" target="_blank">website</a>
 
 **Sebastian Böck** received his diploma degree in electrical engineering from the 
 Technical University in Munich in 2010 and his Ph.D. in computer science from the 
@@ -19,7 +19,7 @@ known for his machine learning-based algorithms, which pushed the performance of
 automatic beat tracking and other tasks into regions formerly only achievable by humans. 
 Currently he works as an AI research engineer for enliteAI in Vienna, Austria.
 
-[website](https://scholar.google.com/citations?user=u--KNeYAAAAJ)
+<a href="https://scholar.google.com/citations?user=u--KNeYAAAAJ" target="_blank">website</a>
 
 **Magdalena Fuentes** is a Provost's Postdoctoral Fellow at the Music and Audio Research 
 Lab and the Center for Urban Science and Progress of New York University NYU working 
@@ -34,4 +34,5 @@ IEEE Audio and Acoustic Signal Processing Technical Committee and has been invol
 the organisation of ISMIR, DCASE and computational rhythm workshops, and she has 
 participated as a mentor in WiMIR and multiple programs at NYU. 
 
-[website](https://magdalenafuentes.github.io)
+<a href="https://magdalenafuentes.github.io" target="_blank">website</a>
+

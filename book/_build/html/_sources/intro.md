@@ -40,7 +40,8 @@ of python notebooks.
 all of the main practical code examples can be found 
 in the following Google Colab notebook:** 
 
-[`Colab link`](https://colab.research.google.com/drive/1tuOqNyO9gdMmYJsj33fP_QOfpRsm2tmt?usp=sharing)
+<a href="https://colab.research.google.com/drive/1tuOqNyO9gdMmYJsj33fP_QOfpRsm2tmt?usp=sharing" target="_blank">Colab link</a>
+
 
 
 Desired outcomes
@@ -62,7 +63,6 @@ demonstrated through diverse sound examples.
 Via hands-on coding examples in python, we intend to provide practical experience in:
 * Loading an existing dataset with ground truth annotations.
 * Pre-processing the dataset, as well as creating training, validation, and testing splits. 
-* Training individual models per task.
 * Training a multi-task model which can simultaneously estimate tempo, beat, and downbeat.
 * Performing inference on the predictions of the trained models.
 
@@ -81,9 +81,9 @@ How to reference this book
 @book{tempobeatdownbeat:book,
 	Author = {Matthew E. P. Davies, Sebastian B\:ock, Magdalena Fuentes},
 	Month = Nov.,
-	Publisher = {TBD},
+	Publisher = {https://tempobeatdownbeat.github.io/tutorial/intro.html},
 	Title = {{Tempo, Beat and Downbeat Estimation}},
 	Year = 2021,
-	Url = {TBD}
+	Url = {https://tempobeatdownbeat.github.io/tutorial/intro.html}
 }
 ``` 

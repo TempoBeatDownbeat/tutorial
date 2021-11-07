@@ -409,7 +409,7 @@ time-consuming. As we’ve seen in the case of the expressive excerpt in the pre
 section, specific aspects of the annotation may require access to a musical score (if it exists and is available).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For comparison, the expressive piece in its entirety (4m51s) which is used extensively in <span id="id2">[<a class="reference internal" href="../ch6_resources/references.html#id6">PBockCD21</a>]</span> took around 15 hours to annotate (spread over 3 days), and included frequent discussion with musical experts.</p>
+<p>For comparison, the expressive piece in its entirety (4m51s) which is used extensively in <span id="id2">[<a class="reference internal" href="../ch6_resources/references.html#id7">PBockCD21</a>]</span> took around 15 hours to annotate (spread over 3 days), and included frequent discussion with musical experts.</p>
 </div>
 <p><strong>Why does this matter?</strong> This matters in the context of deep learning,
 since we’d typically like to acquire as much high-quality annotated data as possible
@@ -441,7 +441,7 @@ of what existing approaches can reliably annotate, then there
 may be very little value in an initial automatic first pass
 if all beat estimates need subsequent correction.</p></li>
 <li><p>A promising approach for the automatic correction of annotations
-appeared in ISMIR 2019 paper by Drieger et al <span id="id3">[<a class="reference internal" href="../ch6_resources/references.html#id234">DSdHMuller19</a>]</span> which relies on a smart snapping of manually-tapped beat locations
+appeared in ISMIR 2019 paper by Drieger et al <span id="id3">[<a class="reference internal" href="../ch6_resources/references.html#id235">DSdHMuller19</a>]</span> which relies on a smart snapping of manually-tapped beat locations
 to peaks in a beat activation function (i.e., the prediction
 of a deep neural network) or an onset detection function, and is shown below.<br />
 While shown to be successful in improving the subjective quality
@@ -453,12 +453,12 @@ at, or near, the “correct” locations.</p></li>
 </ul>
 <div class="figure align-center" id="tapcorrect">
 <a class="reference internal image-reference" href="../_images/tapcorrect.png"><img alt="Tap Correction Procedure Overivew." src="../_images/tapcorrect.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Tap Correction Procedure Overivew. Image taken from <span id="id4">[<a class="reference internal" href="../ch6_resources/references.html#id234">DSdHMuller19</a>]</span></span><a class="headerlink" href="#tapcorrect" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Tap Correction Procedure Overivew. Image taken from <span id="id4">[<a class="reference internal" href="../ch6_resources/references.html#id235">DSdHMuller19</a>]</span></span><a class="headerlink" href="#tapcorrect" title="Permalink to this image">¶</a></p>
 </div>
 <ul class="simple">
 <li><p>Finally, in the case of sequenced music, (e.g., electronic dance music) it may possible
 to be obtain a global tempo, beat, and downbeat locations automatically from
-the project settings. For example, in the Giant Steps tempo dataset <span id="id5">[<a class="reference internal" href="../ch6_resources/references.html#id235">KFH+15</a>]</span>
+the project settings. For example, in the Giant Steps tempo dataset <span id="id5">[<a class="reference internal" href="../ch6_resources/references.html#id236">KFH+15</a>]</span>
 tempo labels were obtained directly from the online music service Beatport, but
 but many cases were found to be ambiguous, or incorrect and required relabelling.
 Of course, it’s worth remembering that not all sequenced music need be of constant tempo and metre, nor are they necessarily easy to analyse (even in cases of constant tempo).</p></li>
@@ -480,7 +480,7 @@ of MIR datasets of all kinds, please see Alexander Lerch’s Audio Content Analy
 and the importance of loading and working with the correct version of a dataset.</p>
 </div>
 <ul class="simple">
-<li><p><strong>Hainsworth</strong> <span id="id6">[<a class="reference internal" href="../ch6_resources/references.html#id160">HM04</a>]</span>
+<li><p><strong>Hainsworth</strong> <span id="id6">[<a class="reference internal" href="../ch6_resources/references.html#id161">HM04</a>]</span>
 The <strong>Hainsworth</strong> dataset comprises 222 musical excerpts of around 1 minute
 each in length, which were organised into six categories by genre label:
 rock/pop, dance, jazz, folk, classical, and choral. It was created by
@@ -495,23 +495,23 @@ Of particular note was the inclusion of 20 or so choral examples
 which drew first attention in the beat tracking community to a particularly
 challenging class of musical signals to annotate, and analyse.
 The Hainsworth dataset remained in its original incarnation
-until 2014 when Böck et al <span id="id7">[<a class="reference internal" href="../ch6_resources/references.html#id240">BockKW14b</a>]</span> performed
+until 2014 when Böck et al <span id="id7">[<a class="reference internal" href="../ch6_resources/references.html#id241">BockKW14b</a>]</span> performed
 a set of revisions on the beat and downbeat annotations
 to correct some errors, and resulted in an increase in performance.</p></li>
-<li><p><strong>HJDB</strong> <span id="id8">[<a class="reference internal" href="../ch6_resources/references.html#id187">HDF12</a>]</span>
+<li><p><strong>HJDB</strong> <span id="id8">[<a class="reference internal" href="../ch6_resources/references.html#id188">HDF12</a>]</span>
 The <strong>HJDB</strong> dataset has 236 excerpts taken from 80s and 90s
 electronic dance music, specifically in the sub-genres of hardcore,
 jungle, and drum and bass. Initially it was only annotated
 in terms of downbeat positions (with no beat labels made).
 Subsequently a set of beat annotations, and revisions to the
 downbeats were made, and the current “reference” set of annotations
-can be found among the supplementary material for <span id="id9">[<a class="reference internal" href="../ch6_resources/references.html#id4">BockDK19</a>]</span>
+can be found among the supplementary material for <span id="id9">[<a class="reference internal" href="../ch6_resources/references.html#id5">BockDK19</a>]</span>
 which can be found <a class="reference external" href="https://github.com/superbock/ISMIR2019">here</a>.
 This dataset is somewhat noteworthy as being among the first datasets
 to push back against the notion that electronic dance music is essentially
 very straightforward from the perspective of computational
 rhythm analysis.</p></li>
-<li><p><strong>SMC</strong> <span id="id10">[<a class="reference internal" href="../ch6_resources/references.html#id237">HDZ+12</a>]</span>
+<li><p><strong>SMC</strong> <span id="id10">[<a class="reference internal" href="../ch6_resources/references.html#id238">HDZ+12</a>]</span>
 The <strong>SMC</strong> dataset contains 217 excerpts of 40s each in duration and
 was designed with a methodology for selecting the audio examples to annotate.
 Specifically, it was based on on the idea of building the dataset
@@ -553,7 +553,7 @@ to ensure you are using the most up to date version of any annotations.</p></li>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Recent work by Anglada-Tort et al <span id="id12">[<a class="reference internal" href="../ch6_resources/references.html#id236">ATHJ21</a>]</span> has propsed a means to eliminate jitter through a novel signal acquisition approach.</p>
+<dd><p>Recent work by Anglada-Tort et al <span id="id12">[<a class="reference internal" href="../ch6_resources/references.html#id237">ATHJ21</a>]</span> has propsed a means to eliminate jitter through a novel signal acquisition approach.</p>
 </dd>
 </dl>
 </div>
