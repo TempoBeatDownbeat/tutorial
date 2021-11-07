@@ -317,13 +317,11 @@
   <a class="reference internal nav-link" href="#multi-layer-perceptrons">
    Multi-layer perceptrons
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#convolutional-neural-networks">
-     Convolutional Neural networks
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convolutional-neural-networks">
+   Convolutional Neural networks
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#recurrent-networks">
@@ -411,8 +409,9 @@ meaning that when using this type of network for audio tasks, any small temporal
 </div>
 <p>MLPs have been mainly used in early works before convolutional neural networks (CNNs) and recurrent neural networks (RNNs) became popular <span id="id12">[<a class="reference internal" href="../ch6_resources/references.html#id222">CFCS17</a>]</span>, and are now used in combination with those architectures, usually as the last layers of a model to map high dimensional intermediate representations
 to the output space (e.g. classes), as discussed below.</p>
+</div>
 <div class="section" id="convolutional-neural-networks">
-<span id="dnns-cnns"></span><h3>Convolutional Neural networks<a class="headerlink" href="#convolutional-neural-networks" title="Permalink to this headline">¶</a></h3>
+<h2>Convolutional Neural networks<a class="headerlink" href="#convolutional-neural-networks" title="Permalink to this headline">¶</a></h2>
 <p>The main idea behind CNNs is to convolve their input with learnable kernels. Systems based on CNNs make the most of the capacity of such networks to learn invariant properties of the data while needing fewer parameters than other DNNs such as MLPs and being easier to train. Also, convolutions are suitable for retrieving changes in the input representations,
 which are (usually) indicators of beat and/or downbeat positions (e.g. changes in harmonic content or spectral energy). Besides, CNNs have shown to be good high-level feature extractors in music <span id="id13">[<a class="reference internal" href="../ch6_resources/references.html#id65">DBDR17</a>]</span>, and are able to express complex relations.</p>
 <p>CNNs can be designed to perform either 1-d or 2-d convolutions, or a combination of both. In the context of audio, in general 1-d convolutions are used in the temporal domain,
@@ -438,7 +437,6 @@ Note that while <span class="math notranslate nohighlight">\(\mathbf{Y}\)</span>
 <p class="admonition-title">Tip</p>
 <p>CNNs are suitable to problems that have two characteristics <span id="id15">[<a class="reference internal" href="../ch6_resources/references.html#id226">McF18</a>]</span>:  statistically meaningful information tends to concentrate locally (e.g. within a window around an event),
 and shift-invariance (e.g. in time or frequency) can be used to reduce model complexity by reusing kernels’ weights with multiple inputs.</p>
-</div>
 </div>
 </div>
 <div class="section" id="recurrent-networks">

@@ -52,7 +52,7 @@ to the output space (e.g. classes), as discussed below.
 
 
 (dnns:cnns)=
-#### Convolutional Neural networks
+### Convolutional Neural networks
 
 
 The main idea behind CNNs is to convolve their input with learnable kernels. Systems based on CNNs make the most of the capacity of such networks to learn invariant properties of the data while needing fewer parameters than other DNNs such as MLPs and being easier to train. Also, convolutions are suitable for retrieving changes in the input representations,
