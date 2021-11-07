@@ -317,11 +317,13 @@
   <a class="reference internal nav-link" href="#multi-layer-perceptrons">
    Multi-layer perceptrons
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#convolutional-neural-networks">
-   Convolutional Neural networks
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#convolutional-neural-networks">
+     Convolutional Neural networks
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#recurrent-networks">
@@ -337,13 +339,11 @@
   <a class="reference internal nav-link" href="#bi-directional-models">
    Bi-directional models
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#temporal-convolutional-networks">
-     Temporal Convolutional networks
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#temporal-convolutional-networks">
+   Temporal Convolutional networks
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#hybrid-architectures">
@@ -411,9 +411,8 @@ meaning that when using this type of network for audio tasks, any small temporal
 </div>
 <p>MLPs have been mainly used in early works before convolutional neural networks (CNNs) and recurrent neural networks (RNNs) became popular <span id="id12">[<a class="reference internal" href="../ch6_resources/references.html#id222">CFCS17</a>]</span>, and are now used in combination with those architectures, usually as the last layers of a model to map high dimensional intermediate representations
 to the output space (e.g. classes), as discussed below.</p>
-</div>
 <div class="section" id="convolutional-neural-networks">
-<h2>Convolutional Neural networks<a class="headerlink" href="#convolutional-neural-networks" title="Permalink to this headline">¶</a></h2>
+<span id="dnns-cnns"></span><h3>Convolutional Neural networks<a class="headerlink" href="#convolutional-neural-networks" title="Permalink to this headline">¶</a></h3>
 <p>The main idea behind CNNs is to convolve their input with learnable kernels. Systems based on CNNs make the most of the capacity of such networks to learn invariant properties of the data while needing fewer parameters than other DNNs such as MLPs and being easier to train. Also, convolutions are suitable for retrieving changes in the input representations,
 which are (usually) indicators of beat and/or downbeat positions (e.g. changes in harmonic content or spectral energy). Besides, CNNs have shown to be good high-level feature extractors in music <span id="id13">[<a class="reference internal" href="../ch6_resources/references.html#id65">DBDR17</a>]</span>, and are able to express complex relations.</p>
 <p>CNNs can be designed to perform either 1-d or 2-d convolutions, or a combination of both. In the context of audio, in general 1-d convolutions are used in the temporal domain,
@@ -439,6 +438,7 @@ Note that while <span class="math notranslate nohighlight">\(\mathbf{Y}\)</span>
 <p class="admonition-title">Tip</p>
 <p>CNNs are suitable to problems that have two characteristics <span id="id15">[<a class="reference internal" href="../ch6_resources/references.html#id226">McF18</a>]</span>:  statistically meaningful information tends to concentrate locally (e.g. within a window around an event),
 and shift-invariance (e.g. in time or frequency) can be used to reduce model complexity by reusing kernels’ weights with multiple inputs.</p>
+</div>
 </div>
 </div>
 <div class="section" id="recurrent-networks">
@@ -495,8 +495,9 @@ while GRUs are faster to train <span id="id23">[<a class="reference internal" hr
 in audio applications such as beat tracking <span id="id24">[<a class="reference internal" href="../ch6_resources/references.html#id215">BockS11</a>]</span> or environmental sound detection <span id="id25">[<a class="reference internal" href="../ch6_resources/references.html#id217">PHV16</a>]</span>. A bi-directional recurrent neural network (Bi-RNN) <span id="id26">[<a class="reference internal" href="../ch6_resources/references.html#id152">SP97</a>]</span> in the context of audio consists of two RNNs running
 in opposite time directions with their hidden vectors <span class="math notranslate nohighlight">\(\mathbf{h}_t ^f\)</span> and <span class="math notranslate nohighlight">\(\mathbf{h}_t ^b\)</span> being concatenated, so the output <span class="math notranslate nohighlight">\(h_t\)</span> at time <span class="math notranslate nohighlight">\(t\)</span> has information about the entire sequence. Unless the application is online, Bi-RNNs are usually preferred due to better performance
 <span id="id27">[<a class="reference internal" href="../ch6_resources/references.html#id226">McF18</a>]</span>.</p>
+</div>
 <div class="section" id="temporal-convolutional-networks">
-<span id="dnns-tcnns"></span><h3>Temporal Convolutional networks<a class="headerlink" href="#temporal-convolutional-networks" title="Permalink to this headline">¶</a></h3>
+<h2>Temporal Convolutional networks<a class="headerlink" href="#temporal-convolutional-networks" title="Permalink to this headline">¶</a></h2>
 <p>A “simple” convolution is only able to consider the context up to a size linear in the depth of the network. This
 makes it challenging to apply them on sequential data, because the amount of context they can handle is small. In the
 context of beat and downbeat tracking systems, that might mean that the input granularity should be coarser if we want to
@@ -521,7 +522,6 @@ advantages, TCNs are taking over these recurrent networks in many sequential tas
 <div class="dropdown admonition">
 <p class="admonition-title">SPOILER ALERT!!</p>
 <p>Because of being light, fast to train and have great performance, we’re using TCNs for the hands on part of the tutorial!</p>
-</div>
 </div>
 </div>
 <div class="section" id="hybrid-architectures">
