@@ -77,7 +77,7 @@ Different stages of feature extraction. Left: input spectrogram, middle: interme
  
 The aim of this stage is to obtain the final downbeat sequence by selecting the most likely candidates in the downbeat likelihood given some model or criteria. Probabilistic graphical models (PGMs) are the most used 
 post-processing techniques since 2010. This might be due to two main reasons: PGMs offer a flexible framework to incorporate music knowledge and then exploit interrelated structure {cite}`papadopoulos2010joint, peeters2010simultaneous`, and the 
-Bar Pointer Model (BPM) {cite}`Whiteley2006` (**ADD INTERNAL REFERENCE**) stands as a very effective and adaptable model for meter tracking, being popular for beat and downbeat tracking. 
+Bar Pointer Model (BPM) {cite}`Whiteley2006` stands as a very effective and adaptable model for meter tracking, being popular for beat and downbeat tracking. 
 
 PGMs proved to be adaptable to cultural-aware systems in diverse music cultures {cite}`ajay2014, Nunes2015, Holzapfel2014`, being for instance extendable to track longer meter cycles and different meters than the widely explored 3/4 and 4/4 {cite}`ajay2016, ajay2017`. 
 Considerable efforts have been made towards improving the use of these models in practice, by reducing computational cost via an efficient state-space definition {cite}`Krebs2015` or proposing _sequential Monte Carlo_ methods (also called _particle filters_) for inference {cite}`ajay2015, krebs2015inferring`. 
