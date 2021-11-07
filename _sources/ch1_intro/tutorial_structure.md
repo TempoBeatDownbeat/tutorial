@@ -85,7 +85,7 @@ There are links to download each notebook at top right of the page.
 -->
 
 We have included links to our [github repo](https://github.com/TempoBeatDownbeat/tutorial)
-which has `requirements.txt` (or `environment.yml`) to set up your own environment
+which has `requirements.txt` to set up your own environment
 so that you can use these tools locally, if you so choose. To run the notebook
 locally, select ".ipynb" ("Download Source File") from the downloads drop down
 menu at the top right corner of the page.

@@ -81,9 +81,9 @@ How to reference this book
 @book{tempobeatdownbeat:book,
 	Author = {Matthew E. P. Davies, Sebastian B\:ock, Magdalena Fuentes},
 	Month = Nov.,
-	Publisher = {TBD},
+	Publisher = {https://tempobeatdownbeat.github.io/tutorial/intro.html},
 	Title = {{Tempo, Beat and Downbeat Estimation}},
 	Year = 2021,
-	Url = {TBD}
+	Url = {https://tempobeatdownbeat.github.io/tutorial/intro.html}
 }
 ``` 

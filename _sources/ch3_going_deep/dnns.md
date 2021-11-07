@@ -113,7 +113,8 @@ Overview of the TCN structure from {cite}`matthewdavies2019temporal`.
 
 Intuitively, TCNs perform convolutions across sub-sampled input representations and are good at learning sequential/temporal structure,
  since they retain the parallelisation property of standard CNNs but can handle much more context. Besides, TCNs can be trained
-far more efficiently than a RNN, LSTM or GRU from a computational perspective, and with much less number of weights.
+far more efficiently than a RNN, LSTM or GRU from a computational perspective, and with much less number of weights. Given this
+advantages, TCNs are taking over these recurrent networks in many sequential tasks. 
 
 ```{admonition} SPOILER ALERT!!
 :class: dropdown
