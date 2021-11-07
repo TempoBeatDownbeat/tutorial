@@ -30,7 +30,7 @@ In general terms, a deep neural network consists of a composition of non-linear 
 The network is parametrized by its weights $\omega$, whose values are optimized so the estimated output $\hat{\mathbf{Y}}=F_\omega (\mathbf{X})$ approximates the desired output $\mathbf{Y}$ given an input $\mathbf{X}$.
 
 (dnns:mlps)=
-#### Multi-layer perceptrons
+### Multi-layer perceptrons
 
 
 Multi-layer perceptrons (MLPs) are the simple and basic modules of DNNs. They are also known as _fully-connected layers_ or _dense layers_, and consist of a sequence of layers, each defined by an affine transformation composed with a non-linearity: 
@@ -150,7 +150,7 @@ in opposite time directions with their hidden vectors $\mathbf{h}_t ^f$ and $\ma
 
 
 (dnns:tcnns)=
-#### Temporal Convolutional networks
+### Temporal Convolutional networks
 
 A "simple" convolution is only able to consider the context up to a size linear in the depth of the network. This
 makes it challenging to apply them on sequential data, because the amount of context they can handle is small. In the 
