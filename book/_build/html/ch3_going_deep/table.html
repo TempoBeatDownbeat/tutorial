@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reference works &#8212; Tempo, Beat and Downbeat Estimation</title>
+    <title>Table of reference works &#8212; Tempo, Beat and Downbeat Estimation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -33,17 +33,17 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
+    <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -51,7 +51,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Loading a dataset with mir-data" href="../ch4_going_deeper/loading_a_dataset.html" />
+    <link rel="next" title="Hands on!" href="../ch4_going_deeper/building_tcn_models.html" />
     <link rel="prev" title="Design decisions for tempo, beat, and downbeat" href="design_decisions.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -88,7 +88,7 @@
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Introduction
  </span>
@@ -96,21 +96,16 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../ch1_intro/tutorial_structure.html">
-   Tutorial structure
+   Tutorial structure and setup
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../ch1_intro/tutorial_scope.html">
-   Tutorial scope
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ch1_intro/resources.html">
-   Resources and relevant projects
+   Tutorial scope and prerequisites
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Basics of tempo, beat, and downbeat
  </span>
@@ -128,7 +123,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../ch2_basics/baseline.html">
-   Baseline Approach
+   Baseline approach
   </a>
  </li>
  <li class="toctree-l1">
@@ -142,20 +137,25 @@
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Going deep: theoretical underpinnings
  </span>
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="recurrent.html">
-   Recurrent approaches: RNNs, LSTMs, and GRUs
+  <a class="reference internal" href="overview.html">
+   Deep learning approaches
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="convolutional.html">
-   Convolutional approaches: CNNs, TCNs
+  <a class="reference internal" href="dnns.html">
+   On different DNN architectures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="postprocessing.html">
+   Post-processing
   </a>
  </li>
  <li class="toctree-l1">
@@ -165,85 +165,35 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Reference works
+   Table of reference works
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
-  Going deeper: pracital examples
+  Going deeper: practial examples
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../ch4_going_deeper/loading_a_dataset.html">
-   Loading a dataset with mir-data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ch4_going_deeper/encoding_targets.html">
-   Encoding the target representations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ch4_going_deeper/creating_splits.html">
-   Creating splits for the dataset
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../ch4_going_deeper/building_tcn_models.html">
-   Building individual TCN models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ch4_going_deeper/training_tcns.html">
-   Training the TCNs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ch4_going_deeper/model_prediction.html">
-   Model prediction and inference
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ch4_going_deeper/evaluation.html">
-   Evaluation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ch4_going_deeper/multitask.html">
-   Multi-task formulation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ch4_going_deeper/fine_tuning.html">
-   Fine-tuning
+   Hands on!
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Discussion and conclusions
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../ch5_discussion/recap.html">
-   Recap
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ch5_discussion/real_world_limitations.html">
-   Real world limitations
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../ch5_discussion/open_challenges.html">
-   Open challenges
+   Concluding remarks
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Resources
  </span>
@@ -321,11 +271,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/magdalenafuentes/rhythm_tutorial"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/TempoBeatDownbeat/tutorial"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/magdalenafuentes/rhythm_tutorial/issues/new?title=Issue%20on%20page%20%2Fch3_going_deep/table.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/TempoBeatDownbeat/tutorial/issues/new?title=Issue%20on%20page%20%2Fch3_going_deep/table.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -354,21 +304,17 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="reference-works">
-<h1>Reference works<a class="headerlink" href="#reference-works" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="table-of-reference-works">
+<h1>Table of reference works<a class="headerlink" href="#table-of-reference-works" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This table is not exahustive. We did our best to compile relevant works in the past few years, but
 we welcome contributions to update this table with missing references or corrections. Please open
-an issue in the main repository.</p>
+an issue in the main repository!</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Definitions of the acronyms are at the bottom of this page.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This table needs further format, WIP</p>
 </div>
 <table class="colwidths-given table">
 <colgroup>
@@ -407,45 +353,45 @@ an issue in the main repository.</p>
 <td></td>
 <td><p>✅</p></td>
 <td></td>
-<td><p>??</p></td>
-<td><p>??</p></td>
-<td><p>??</p></td>
+<td><p>log-STFT</p></td>
+<td><p>TCN</p></td>
+<td><p>BPM</p></td>
 </tr>
 <tr class="row-even"><td><p>Steinmetz <span id="id2">[<a class="reference internal" href="../ch6_resources/references.html#id2">SR21</a>]</span></p></td>
 <td><p>2021</p></td>
 <td></td>
 <td><p>✅</p></td>
-<td></td>
-<td><p>??</p></td>
-<td><p>??</p></td>
-<td><p>??</p></td>
+<td><p>✅</p></td>
+<td><p>waveform</p></td>
+<td><p>TCN</p></td>
+<td><p>DBN</p></td>
 </tr>
 <tr class="row-odd"><td><p>Böck <span id="id3">[<a class="reference internal" href="../ch6_resources/references.html#id5">BockD20</a>]</span></p></td>
 <td><p>2020</p></td>
 <td><p>✅</p></td>
 <td><p>✅</p></td>
 <td><p>✅</p></td>
-<td><p>??</p></td>
-<td><p>??</p></td>
-<td><p>??</p></td>
+<td><p>log-STFT</p></td>
+<td><p>TCN</p></td>
+<td><p>DBN</p></td>
 </tr>
 <tr class="row-even"><td><p>Böck <span id="id4">[<a class="reference internal" href="../ch6_resources/references.html#id4">BockDK19</a>]</span></p></td>
 <td><p>2019</p></td>
 <td><p>✅</p></td>
 <td><p>✅</p></td>
 <td></td>
-<td><p>??</p></td>
-<td><p>??</p></td>
-<td><p>??</p></td>
+<td><p>log-STFT</p></td>
+<td><p>TCN</p></td>
+<td><p>DBN</p></td>
 </tr>
 <tr class="row-odd"><td><p>Davies <span id="id5">[<a class="reference internal" href="../ch6_resources/references.html#id3">MBock19</a>]</span></p></td>
 <td><p>2019</p></td>
 <td></td>
 <td><p>✅</p></td>
 <td></td>
-<td><p>??</p></td>
-<td><p>??</p></td>
-<td><p>??</p></td>
+<td><p>log-STFT</p></td>
+<td><p>TCN</p></td>
+<td><p>DBN</p></td>
 </tr>
 <tr class="row-even"><td><p>Fuentes <span id="id6">[<a class="reference internal" href="../ch6_resources/references.html#id7">FMR+19</a>]</span></p></td>
 <td><p>2019</p></td>
@@ -738,8 +684,8 @@ an issue in the main repository.</p>
 <li><p><strong>HMMs:</strong> Hidden Markov models</p></li>
 <li><p><strong>GMMs:</strong> Gaussian mixture models</p></li>
 <li><p><strong>DBN:</strong> Dynamic Bayesian network</p></li>
-<li><p><strong>DNNs:</strong>: Deep Neural Network (WHICH ONE????)</p></li>
-<li><p><strong>LFS:</strong> ?????? (low frequency spectrogram???)</p></li>
+<li><p><strong>DNNs:</strong>: Deep Neural Network</p></li>
+<li><p><strong>LFS:</strong> Low frequency spectrogram</p></li>
 <li><p><strong>MAF:</strong> Mel auditory feature</p></li>
 <li><p><strong>MFCCs:</strong> Mel frequency cepstral coefficients</p></li>
 <li><p><strong>ODF:</strong> onset detection function</p></li>
@@ -790,10 +736,10 @@ an issue in the main repository.</p>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../ch4_going_deeper/loading_a_dataset.html" title="next page">
+        <a class="right-next" href="../ch4_going_deeper/building_tcn_models.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Loading a dataset with mir-data</p>
+                <p class="prevnext-title">Hands on!</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

@@ -17,6 +17,12 @@ is **not** intended to be exhaustive in its coverage of all existing approaches,
 and furthermore places greater emphasis on more recent research covering the last
 5 - 10 years. 
 
+```{tip}
+For anyone wanting a more detailed look at earlier approaches
+we highly recommend the ISMIR 2006 tutorial on [Computational Rhythm Description](https://www.eecs.qmul.ac.uk/~simond/pub/2006/ISMIR06-RhythmTutorial-GouyonDixon.pdf) conducted by not one but **two**
+former ISMIR Presidents: Fabien Gouyon and Simon Dixon.  
+```
+
 From the **musical perspective** we also restrict ourselves largely to musical content 
 from a Western perspective. This is in no way an attempt to diminish or downplay the 
 importance of non-Western musical traditions, but rather it is a reflection of the

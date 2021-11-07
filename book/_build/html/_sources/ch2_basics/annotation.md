@@ -41,6 +41,7 @@ name: annotate
 Annotation example in Sonic Visualiser.
 ```
 
+
 The stages of the process as follows:
 1. Listening to the excerpt and tapping along in real time to mark the beat locations. 
 Note, usually it's not possible to start tapping straight away as it takes some time
@@ -140,13 +141,6 @@ name: tapcorrect
 ---
 Tap Correction Procedure Overivew. Image taken from {cite}`DriedgerSHM19_TapCorrect_ISMIR`
 ```
-<!--
-* <span style="color:blue"> Time-permitting it would also be good to add something about Meinard's
-work on transferring measure locations between different versions of the same
-piece, and I guess there must be some work about looking at applying
-MIDI annotations to audio recordings via alignment. Maybe Colin Raffel did this?
-</span> 
--->
 
 * Finally, in the case of sequenced music, (e.g., electronic dance music) it may possible
 to be obtain a global tempo, beat, and downbeat locations automatically from
@@ -192,8 +186,6 @@ The Hainsworth dataset remained in its original incarnation
 until 2014 when Böck et al {cite}`bock2014ismir` performed
 a set of revisions on the beat and downbeat annotations
 to correct some errors, and resulted in an increase in performance. 
-<!--
--->
 
 * **HJDB** {cite}`hockman2012one`
 The **HJDB** dataset has 236 excerpts taken from 80s and 90s
@@ -209,14 +201,6 @@ to push back against the notion that electronic dance music is essentially
 very straightforward from the perspective of computational
 rhythm analysis.  
 
-<!--
-Do if time allows.
-* **JAAH** {cite}`eremenko18ismir`
-Say something interesting about this dataset !
-
-* **GTZAN** {cite}`tzanetakis02tsap,marchand2015swing`
-initially a genre dataset, but later with beat and downbeat annotations
--->
 * **SMC** {cite}`holzapfel12taslp`
 The **SMC** dataset contains 217 excerpts of 40s each in duration and 
 was designed with a methodology for selecting the audio examples to annotate.

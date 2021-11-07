@@ -58,7 +58,7 @@ librosa.display.waveplot(x1, sr=SR, alpha=0.6); # this semi-colon surpresses the
 plt.title('Easy Example: audio waveform', fontsize=15)
 plt.yticks(fontsize=12)
 plt.xticks(fontsize=12)
-plt.xlabel('Time (s)', fontsize=13)
+plt.xlabel('Time', fontsize=13)
 plt.xlim(0, len(x1)/sr);
 ipd.Audio(x1, rate=SR) 
 
@@ -118,7 +118,7 @@ plt.legend(fontsize=12);
 plt.title('Easy example: audio waveform with beats and downbeats', fontsize=15)
 plt.yticks(fontsize=12)
 plt.xticks(fontsize=12)
-plt.xlabel('Time (s)', fontsize=13)
+plt.xlabel('Time', fontsize=13)
 plt.xlim(0, len(x1)/sr);
 
 ipd.Audio(0.6*x1+0.25*y_beats1+0.25*y_downbeats1, rate=SR) 
@@ -171,7 +171,7 @@ plt.figure(figsize=FIGSIZE)
 plt.title('Expressive Example: audio waveform', fontsize=15)
 plt.yticks(fontsize=12)
 plt.xticks(fontsize=12)
-plt.xlabel('Time (s)', fontsize=13)
+plt.xlabel('Time', fontsize=13)
 plt.xlim(0, len(x2)/sr);
 librosa.display.waveshow(x2, sr=SR, alpha=0.6); 
 
@@ -214,7 +214,7 @@ plt.legend(fontsize=12);
 plt.title('Expressive Example: audio waveform with beats and downbeats', fontsize=15)
 plt.yticks(fontsize=12)
 plt.xticks(fontsize=12)
-plt.xlabel('Time (s)', fontsize=13)
+plt.xlabel('Time', fontsize=13)
 plt.legend(fontsize=12); 
 plt.xlim(0, len(x2)/sr);
 
@@ -294,7 +294,7 @@ plt.title('Nonwestern Example: audio waveform', fontsize=15)
 plt.yticks(fontsize=12)
 plt.xticks(fontsize=12)
 plt.xlim(0, len(x3)/sr);
-plt.xlabel('Time (s)', fontsize=13)
+plt.xlabel('Time', fontsize=13)
 ipd.Audio(x3, rate=SR) 
 
 
@@ -317,7 +317,7 @@ plt.vlines(downbeats3, -1, 1, label='Downbeats', color='black', linestyle='--', 
 plt.title('Nonwestern Example: audio waveform with beats and downbeats', fontsize=15)
 plt.yticks(fontsize=12)
 plt.xticks(fontsize=12)
-plt.xlabel('Time (s)', fontsize=13)
+plt.xlabel('Time', fontsize=13)
 plt.legend(fontsize=12);  
 plt.xlim(0, len(x3)/sr);
 ipd.Audio(0.6*x3+0.25*y_beats3+0.25*y_downbeats3, rate=SR) 

@@ -87,6 +87,7 @@ ax[1].label_outer()
 
 # We know that the mel spectrogram has time on the horizontal axis 
 # and frequency (in mel bands) on the vertical axis. So far so good...
+# 
 # Very crudely we can look at vertical type structure as corresponding
 # the percussive type content (e.g., drums) and horizontal structure
 # as corresponding to harmonic content (e.g., pitched musical instruments 
@@ -137,11 +138,11 @@ plt.title('Mel Spectrogram: Low frequency region ', fontsize=15);
 
 
 plt.figure(figsize=(14,3))
-librosa.display.specshow(librosa.power_to_db(S_bl[:,199:682], ref=np.max),
+librosa.display.specshow(librosa.power_to_db(S_bl[:,:682], ref=np.max),
                          y_axis='mel', x_axis='time', sr=sr,
                          hop_length=hop_length, fmin=fmin, fmax=bl_fmax)
 plt.title('Band-limited Mel Spectrogram: zoomed-in on the first two bars ', fontsize=15);
-
+plt.xlim([1.99,6.82])
 ipd.Audio(y[round(1.7*sr):round(6.82*sr)], rate=sr) 
 
 
@@ -262,7 +263,7 @@ ipd.Audio(y[round(1.7*sr):round(6.82*sr)], rate=sr)
 # ```{admonition} Full disclosure!
 # 
 # The example code for tempo estimaton and plotting in librosa is so nice, that we've used
-# in almost verbatim here. Thanks Brian!
+# in almost verbatim here. So a big shout out to Brian McFee!
 # ````
 # 
 # The goal of periodicity detection is essentially to discover the tempo of the piece
@@ -611,6 +612,8 @@ y_beats = librosa.clicks(times=est_beats_095, sr=sr, click_freq=1000.0, click_du
 ipd.Audio(0.6*y+0.25*y_beats, rate=sr) 
 
 
+# Let's also listen to one other sound example which demonstrates this principle quite nicely. 
+
 # In[14]:
 
 
@@ -673,15 +676,3 @@ ipd.Audio(0.6*y_mini+0.25*y_beats_mini, rate=sr)
 # But for now, we move on to the last part of the introductory
 # material which considers how to evaluate... or put another way,
 # how can we measure if the outputs we just heard are any good.
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-

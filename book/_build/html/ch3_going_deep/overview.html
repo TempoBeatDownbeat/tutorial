@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -33,17 +33,17 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
+    <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -51,7 +51,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Recurrent approaches: RNNs, LSTMs, and GRUs" href="dnns.html" />
+    <link rel="next" title="On different DNN architectures" href="dnns.html" />
     <link rel="prev" title="Perspectives" href="../ch2_basics/perspectives.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -88,7 +88,7 @@
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Introduction
  </span>
@@ -96,7 +96,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../ch1_intro/tutorial_structure.html">
-   Tutorial Structure and Setup
+   Tutorial structure and setup
   </a>
  </li>
  <li class="toctree-l1">
@@ -105,7 +105,7 @@
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Basics of tempo, beat, and downbeat
  </span>
@@ -137,7 +137,7 @@
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Going deep: theoretical underpinnings
  </span>
@@ -150,7 +150,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="dnns.html">
-   Recurrent approaches: RNNs, LSTMs, and GRUs
+   On different DNN architectures
   </a>
  </li>
  <li class="toctree-l1">
@@ -165,95 +165,40 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="table.html">
-   Reference works
+   Table of reference works
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Going deeper: practial examples
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../ch4_going_deeper/loading_a_dataset.html">
-   Loading a dataset with mir-data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ch4_going_deeper/encoding_targets.html">
-   Encoding the target representations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ch4_going_deeper/creating_splits.html">
-   Creating splits for the dataset
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../ch4_going_deeper/building_tcn_models.html">
-   Building individual TCN models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ch4_going_deeper/training_tcns.html">
-   Training the TCNs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ch4_going_deeper/model_prediction.html">
-   Model prediction and inference
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ch4_going_deeper/evaluation.html">
-   Evaluation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ch4_going_deeper/multitask.html">
-   Multi-task formulation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ch4_going_deeper/fine_tuning.html">
-   Fine-tuning
+   Hands on!
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Discussion and conclusions
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../ch5_discussion/recap.html">
-   Recap
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ch5_discussion/real_world_limitations.html">
-   Real world limitations
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../ch5_discussion/open_challenges.html">
-   Open challenges
+   Concluding remarks
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Resources
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../ch6_resources/resources.html">
-   Resources and relevant projects
-  </a>
- </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../ch6_resources/references.html">
    References
@@ -326,11 +271,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/magdalenafuentes/rhythm_tutorial"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/TempoBeatDownbeat/tutorial"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/magdalenafuentes/rhythm_tutorial/issues/new?title=Issue%20on%20page%20%2Fch3_going_deep/overview.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/TempoBeatDownbeat/tutorial/issues/new?title=Issue%20on%20page%20%2Fch3_going_deep/overview.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -387,16 +332,21 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="deep-learning-approaches">
+  <div class="section" id="deep-learning-approaches">
 <span id="dnns-overview"></span><h1>Deep learning approaches<a class="headerlink" href="#deep-learning-approaches" title="Permalink to this headline">¶</a></h1>
 <p>The goal of these sections is to provide the theoretical underpinnings of deep learning models or <em>deep neural networks</em> (DNNs) commonly used for tempo, beat and downbeat tracking, to build an understanding of why these models work well in these tasks and what are their limitations. Here we discuss the main concepts and definitions,
 but for those interested in reading more about the use of DNNs in audio processing and MIR related tasks, we suggest them to take a look at works like McFee <span id="id1">[<a class="reference internal" href="../ch6_resources/references.html#id225">McF18</a>]</span>, Purwins et al. <span id="id2">[<a class="reference internal" href="../ch6_resources/references.html#id227">PLV+19</a>]</span> and Choi et al. <span id="id3">[<a class="reference internal" href="../ch6_resources/references.html#id221">CFCS17</a>]</span>.</p>
-<p><strong>Sebastian do you have further suggestions for resources about DNNs for audio/MIR here</strong>?</p>
+<p>The field moved quite fast these past years and the amount different design choices and approaches can be somehow overwhelming!
+We tried to come up with a way of summarizing the different moving parts of beat and downbeat deep learning systems to help
+digest this, as we explain below.</p>
 <p>Recent beat and downbeat tracking approaches can be structured in three main stages: 1) A first stage of <em>low-level feature</em> computation or <em>feature extraction</em>, where feature vectors that represent the content of musical audio are
 extracted from the raw audio signal (e.g. Spectrogram, Chromagram); 2) A second step that usually consists of a stage of feature learning, whose outcome is an activation function that indicates the most likely candidates
 for beats and/or downbeats among the input audio observations; 3) Finally, a post-processing stage is often used, usually consisting of a probabilistic graphical model which encodes some relevant musical rules
 to select the final beat/downbeat candidates.</p>
+<div class="figure align-default" id="id25">
 <img alt="General pipeline commonly used for beat and/or downbeat tracking systems." src="../_images/diagram.png" />
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">General pipeline commonly used for beat and/or downbeat tracking systems.</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+</div>
 <p>Different alternatives were proposed for the distinct stages among beat and downbeat tracking systems. Here we give an overview of the main ideas
 presented in the literature.</p>
 <div class="section" id="feature-extraction">
@@ -408,6 +358,10 @@ For beat, the main features exploited are those related to event-oriented indica
 beat positions are <span id="id8">[<a class="reference internal" href="../ch6_resources/references.html#id180">DRuaP+12</a>, <a class="reference internal" href="../ch6_resources/references.html#id28">FJDE15</a>, <a class="reference internal" href="../ch6_resources/references.html#id32">HKS14</a>, <a class="reference internal" href="../ch6_resources/references.html#id190">KBockW13</a>, <a class="reference internal" href="../ch6_resources/references.html#id203">KHCW15</a>, <a class="reference internal" href="../ch6_resources/references.html#id104">NRJB15</a>, <a class="reference internal" href="../ch6_resources/references.html#id51">SHCS15</a>]</span>. For downbeat, harmonic-related features showed to be relevant to estimate downbeats reliably across music genres.</p>
 <p>The feature extraction is usually based on a single feature <span id="id9">[<a class="reference internal" href="../ch6_resources/references.html#id62">BockKW14a</a>, <a class="reference internal" href="../ch6_resources/references.html#id32">HKS14</a>, <a class="reference internal" href="../ch6_resources/references.html#id201">KBockW14</a>, <a class="reference internal" href="../ch6_resources/references.html#id18">KBockW11</a>, <a class="reference internal" href="../ch6_resources/references.html#id176">PP10a</a>, <a class="reference internal" href="../ch6_resources/references.html#id179">PP10b</a>, <a class="reference internal" href="../ch6_resources/references.html#id51">SHCS15</a>, <a class="reference internal" href="../ch6_resources/references.html#id202">ZDGomez14</a>]</span>, with some exceptions exploiting more than one music property at the same time <span id="id10">[<a class="reference internal" href="../ch6_resources/references.html#id10">DBDR15</a>, <a class="reference internal" href="../ch6_resources/references.html#id59">DBDR16</a>, <a class="reference internal" href="../ch6_resources/references.html#id64">DBDR17</a>, <a class="reference internal" href="../ch6_resources/references.html#id30">FMC+19</a>, <a class="reference internal" href="../ch6_resources/references.html#id8">FMC+18</a>, <a class="reference internal" href="../ch6_resources/references.html#id11">KBockDW16</a>, <a class="reference internal" href="../ch6_resources/references.html#id202">ZDGomez14</a>]</span>, which results in systems robust to different music genres <span id="id11">[<a class="reference internal" href="../ch6_resources/references.html#id64">DBDR17</a>]</span>.
 Recently, approaches based on deep learning exploring combinations of logarithmic spectrograms with different resolutions showed to perform competently <span id="id12">[<a class="reference internal" href="../ch6_resources/references.html#id5">BockD20</a>, <a class="reference internal" href="../ch6_resources/references.html#id4">BockDK19</a>, <a class="reference internal" href="../ch6_resources/references.html#id213">BockKW16</a>, <a class="reference internal" href="../ch6_resources/references.html#id201">KBockW14</a>]</span>.</p>
+<div class="figure align-default" id="id26">
+<img alt="Example of features used for downbeat tracking." src="../_images/features_example.png" />
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Example of features, from left to right: melodic constant-Q transform, onset detection function, chromagram, low-frequency spectrogram. Adapted from <span id="id13">[<a class="reference internal" href="../ch6_resources/references.html#id64">DBDR17</a>]</span>.</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 <div class="section" id="likelihood-estimation">
 <h2>Likelihood estimation<a class="headerlink" href="#likelihood-estimation" title="Permalink to this headline">¶</a></h2>
@@ -415,21 +369,29 @@ Recently, approaches based on deep learning exploring combinations of logarithmi
 in a given temporal sequence. There are two main groups of approaches in this respect: the first one uses “heuristics” to perform the mapping, while the second
 group exploits machine learning approaches. The latter group is the most popular one in the literature in the last years and also the state of the art.</p>
 <p>The estimation of a likelihood with heuristics is performed differently depending on the features used. For instance, a common approach is to pre-define a template of <em>expected</em> features such as
-spectral-flux or chroma, and to measure the distance between this template to the features computed from the audio signal <span id="id13">[<a class="reference internal" href="../ch6_resources/references.html#id104">NRJB15</a>, <a class="reference internal" href="../ch6_resources/references.html#id179">PP10b</a>]</span>. Within the group of
+spectral-flux or chroma, and to measure the distance between this template to the features computed from the audio signal <span id="id14">[<a class="reference internal" href="../ch6_resources/references.html#id104">NRJB15</a>, <a class="reference internal" href="../ch6_resources/references.html#id179">PP10b</a>]</span>. Within the group of
 machine learning approaches, we could identify two subgroups: a first one that exploits “traditional” learning techniques and a second one with focus on deep learning models.</p>
+<div class="figure align-default" id="id27">
+<img alt="Example of rhythmic patter learning." src="../_images/rhythmic_patterns.png" />
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">Example of rhythmic patter learning from <span id="id15">[<a class="reference internal" href="../ch6_resources/references.html#id190">KBockW13</a>]</span>.</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+</div>
 <p>Before deep learning, machine learning systems often focus on recognizing rhythm patterns in data, for instance by using <em>Gaussian Mixture Models</em> (GMM) and k-means
-<span id="id14">[<a class="reference internal" href="../ch6_resources/references.html#id32">HKS14</a>, <a class="reference internal" href="../ch6_resources/references.html#id190">KBockW13</a>, <a class="reference internal" href="../ch6_resources/references.html#id203">KHCW15</a>, <a class="reference internal" href="../ch6_resources/references.html#id104">NRJB15</a>, <a class="reference internal" href="../ch6_resources/references.html#id51">SHCS15</a>, <a class="reference internal" href="../ch6_resources/references.html#id46">SHCS16</a>, <a class="reference internal" href="../ch6_resources/references.html#id224">SHS17</a>]</span>. This usually required making some assumptions of
+<span id="id16">[<a class="reference internal" href="../ch6_resources/references.html#id32">HKS14</a>, <a class="reference internal" href="../ch6_resources/references.html#id190">KBockW13</a>, <a class="reference internal" href="../ch6_resources/references.html#id203">KHCW15</a>, <a class="reference internal" href="../ch6_resources/references.html#id104">NRJB15</a>, <a class="reference internal" href="../ch6_resources/references.html#id51">SHCS15</a>, <a class="reference internal" href="../ch6_resources/references.html#id46">SHCS16</a>, <a class="reference internal" href="../ch6_resources/references.html#id224">SHS17</a>]</span>. This usually required making some assumptions of
 style or genre (e.g. to define the length of the patterns to be learned), and for these models to be effective the music should have distinctive rhythmic patterns.
 Deep learning approaches propose an alternative to such limitations given their capacity to learn complex function mappings, and systems exploiting DNNs have became the state of the art in
-recent years <span id="id15">[<a class="reference internal" href="../ch6_resources/references.html#id230">JLL19</a>]</span>.</p>
+recent years <span id="id17">[<a class="reference internal" href="../ch6_resources/references.html#id230">JLL19</a>]</span>.</p>
+<div class="figure align-default" id="id28">
+<img alt="Example of likelihood estimation." src="../_images/feature_extraction.png" />
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Different stages of feature extraction. Left: input spectrogram, middle: intermediate DNN outputs, right: the final beat and downbeat likelihoods. Adapted from <span id="id18">[<a class="reference internal" href="../ch6_resources/references.html#id213">BockKW16</a>]</span>.</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 <div class="section" id="inference">
 <h2>Inference<a class="headerlink" href="#inference" title="Permalink to this headline">¶</a></h2>
 <p>The aim of this stage is to obtain the final downbeat sequence by selecting the most likely candidates in the downbeat likelihood given some model or criteria. Probabilistic graphical models (PGMs) are the most used
-post-processing techniques since 2010. This might be due to two main reasons: PGMs offer a flexible framework to incorporate music knowledge and then exploit interrelated structure <span id="id16">[<a class="reference internal" href="../ch6_resources/references.html#id176">PP10a</a>, <a class="reference internal" href="../ch6_resources/references.html#id179">PP10b</a>]</span>, and the
-Bar Pointer Model (BPM) <span id="id17">[<a class="reference internal" href="../ch6_resources/references.html#id54">WCG06</a>]</span> (<strong>ADD INTERNAL REFERENCE</strong>) stands as a very effective and adaptable model for meter tracking, being popular for beat and downbeat tracking.</p>
-<p>PGMs proved to be adaptable to cultural-aware systems in diverse music cultures <span id="id18">[<a class="reference internal" href="../ch6_resources/references.html#id32">HKS14</a>, <a class="reference internal" href="../ch6_resources/references.html#id104">NRJB15</a>, <a class="reference internal" href="../ch6_resources/references.html#id194">SHS14</a>]</span>, being for instance extendable to track longer meter cycles and different meters than the widely explored 3/4 and 4/4 <span id="id19">[<a class="reference internal" href="../ch6_resources/references.html#id46">SHCS16</a>, <a class="reference internal" href="../ch6_resources/references.html#id224">SHS17</a>]</span>.
-Considerable efforts have been made towards improving the use of these models in practice, by reducing computational cost via an efficient state-space definition <span id="id20">[<a class="reference internal" href="../ch6_resources/references.html#id18">KBockW11</a>]</span> or proposing <em>sequential Monte Carlo</em> methods (also called <em>particle filters</em>) for inference <span id="id21">[<a class="reference internal" href="../ch6_resources/references.html#id203">KHCW15</a>, <a class="reference internal" href="../ch6_resources/references.html#id51">SHCS15</a>]</span>.</p>
+post-processing techniques since 2010. This might be due to two main reasons: PGMs offer a flexible framework to incorporate music knowledge and then exploit interrelated structure <span id="id19">[<a class="reference internal" href="../ch6_resources/references.html#id176">PP10a</a>, <a class="reference internal" href="../ch6_resources/references.html#id179">PP10b</a>]</span>, and the
+Bar Pointer Model (BPM) <span id="id20">[<a class="reference internal" href="../ch6_resources/references.html#id54">WCG06</a>]</span> (<strong>ADD INTERNAL REFERENCE</strong>) stands as a very effective and adaptable model for meter tracking, being popular for beat and downbeat tracking.</p>
+<p>PGMs proved to be adaptable to cultural-aware systems in diverse music cultures <span id="id21">[<a class="reference internal" href="../ch6_resources/references.html#id32">HKS14</a>, <a class="reference internal" href="../ch6_resources/references.html#id104">NRJB15</a>, <a class="reference internal" href="../ch6_resources/references.html#id194">SHS14</a>]</span>, being for instance extendable to track longer meter cycles and different meters than the widely explored 3/4 and 4/4 <span id="id22">[<a class="reference internal" href="../ch6_resources/references.html#id46">SHCS16</a>, <a class="reference internal" href="../ch6_resources/references.html#id224">SHS17</a>]</span>.
+Considerable efforts have been made towards improving the use of these models in practice, by reducing computational cost via an efficient state-space definition <span id="id23">[<a class="reference internal" href="../ch6_resources/references.html#id18">KBockW11</a>]</span> or proposing <em>sequential Monte Carlo</em> methods (also called <em>particle filters</em>) for inference <span id="id24">[<a class="reference internal" href="../ch6_resources/references.html#id203">KHCW15</a>, <a class="reference internal" href="../ch6_resources/references.html#id51">SHCS15</a>]</span>.</p>
 </div>
 <div class="section" id="next">
 <h2>Next<a class="headerlink" href="#next" title="Permalink to this headline">¶</a></h2>
@@ -479,7 +441,7 @@ Considerable efforts have been made towards improving the use of these models in
         <a class="right-next" href="dnns.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Recurrent approaches: RNNs, LSTMs, and GRUs</p>
+                <p class="prevnext-title">On different DNN architectures</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

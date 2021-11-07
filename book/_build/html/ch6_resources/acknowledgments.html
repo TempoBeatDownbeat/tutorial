@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -33,17 +33,17 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
+    <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -88,7 +88,7 @@
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Introduction
  </span>
@@ -96,21 +96,16 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../ch1_intro/tutorial_structure.html">
-   Tutorial structure
+   Tutorial structure and setup
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../ch1_intro/tutorial_scope.html">
-   Tutorial scope
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ch1_intro/resources.html">
-   Resources and relevant projects
+   Tutorial scope and prerequisites
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Basics of tempo, beat, and downbeat
  </span>
@@ -128,7 +123,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../ch2_basics/baseline.html">
-   Baseline Approach
+   Baseline approach
   </a>
  </li>
  <li class="toctree-l1">
@@ -142,20 +137,25 @@
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Going deep: theoretical underpinnings
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../ch3_going_deep/recurrent.html">
-   Recurrent approaches: RNNs, LSTMs, and GRUs
+  <a class="reference internal" href="../ch3_going_deep/overview.html">
+   Deep learning approaches
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../ch3_going_deep/convolutional.html">
-   Convolutional approaches: CNNs, TCNs
+  <a class="reference internal" href="../ch3_going_deep/dnns.html">
+   On different DNN architectures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch3_going_deep/postprocessing.html">
+   Post-processing
   </a>
  </li>
  <li class="toctree-l1">
@@ -165,85 +165,35 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../ch3_going_deep/table.html">
-   Reference works
+   Table of reference works
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
-  Going deeper: pracital examples
+  Going deeper: practial examples
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../ch4_going_deeper/loading_a_dataset.html">
-   Loading a dataset with mir-data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ch4_going_deeper/encoding_targets.html">
-   Encoding the target representations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ch4_going_deeper/creating_splits.html">
-   Creating splits for the dataset
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../ch4_going_deeper/building_tcn_models.html">
-   Building individual TCN models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ch4_going_deeper/training_tcns.html">
-   Training the TCNs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ch4_going_deeper/model_prediction.html">
-   Model prediction and inference
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ch4_going_deeper/evaluation.html">
-   Evaluation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ch4_going_deeper/multitask.html">
-   Multi-task formulation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ch4_going_deeper/fine_tuning.html">
-   Fine-tuning
+   Hands on!
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Discussion and conclusions
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../ch5_discussion/recap.html">
-   Recap
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ch5_discussion/real_world_limitations.html">
-   Real world limitations
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../ch5_discussion/open_challenges.html">
-   Open challenges
+   Concluding remarks
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Resources
  </span>
@@ -321,11 +271,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/magdalenafuentes/rhythm_tutorial"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/TempoBeatDownbeat/tutorial"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/magdalenafuentes/rhythm_tutorial/issues/new?title=Issue%20on%20page%20%2Fch6_resources/acknowledgments.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/TempoBeatDownbeat/tutorial/issues/new?title=Issue%20on%20page%20%2Fch6_resources/acknowledgments.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -357,6 +307,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#existing-tools">
+   Existing tools
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#funding">
    Funding
   </a>
@@ -372,7 +327,7 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="acknowledgments">
+  <div class="section" id="acknowledgments">
 <span id="ackmap"></span><h1>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="inspiration">
 <span id="ackmap-help"></span><h2>Inspiration<a class="headerlink" href="#inspiration" title="Permalink to this headline">¶</a></h2>
@@ -380,6 +335,20 @@
 owes a huge debt of gratitude to the amazing example set by the ISMIR 2020
 tutorial on <a class="reference external" href="https://source-separation.github.io/tutorial/landing.html"><code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">Source</span> <span class="pre">Tools</span> <span class="pre">&amp;</span> <span class="pre">Data</span> <span class="pre">for</span> <span class="pre">Music</span> <span class="pre">Source</span> <span class="pre">Separation</span></code></a></p>
 <p>So special thanks Ethan, Prem, and Justin!</p>
+</div>
+<div class="section" id="existing-tools">
+<span id="ackmap-tools"></span><h2>Existing tools<a class="headerlink" href="#existing-tools" title="Permalink to this headline">¶</a></h2>
+<p>This tutorial also makes considerable use of the following
+existing tools and resources from the field of MIR in general
+and those specific to the computational analysis of musical rhythm.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mirdata</span></code> <a class="reference external" href="https://github.com/mir-dataset-loaders/mirdata">Github Link</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mir_eval</span></code> <a class="reference external" href="https://github.com/craffel/mir_eval">Github Link</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">madmom</span></code> <a class="reference external" href="https://github.com/CPJKU/madmom">Github Link</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">librosa</span></code> <a class="reference external" href="https://github.com/librosa/librosa">Github Link</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FMP</span> <span class="pre">notebooks</span></code> <a class="reference external" href="https://www.audiolabs-erlangen.de/resources/MIR/FMP/C6/C6.html">Tempo and Beat Tracking Chapter</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">musicinformationretrieval.com</span></code> <a class="reference external" href="https://musicinformationretrieval.com">Website</a></p></li>
+</ul>
 </div>
 <div class="section" id="funding">
 <span id="ackmap-funding"></span><h2>Funding<a class="headerlink" href="#funding" title="Permalink to this headline">¶</a></h2>
@@ -391,6 +360,7 @@ under the project IF/01566/2015.</p>
 <p><img alt="" src="../_images/centro.png" />
 <img alt="" src="../_images/policromatico_v2.jpg" />
 <img alt="" src="../_images/Logo2_POPH.jpg" /></p>
+<p>Magdalena Fuentes is a faculty fellow in the NYU Provost’s Postdoctoral Fellowship Program at the NYU Center for Urban Science and Progress and Music and Audio Research Laboratory.</p>
 </div>
 </div>
 

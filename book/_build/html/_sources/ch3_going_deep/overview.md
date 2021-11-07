@@ -4,19 +4,21 @@
 The goal of these sections is to provide the theoretical underpinnings of deep learning models or _deep neural networks_ (DNNs) commonly used for tempo, beat and downbeat tracking, to build an understanding of why these models work well in these tasks and what are their limitations. Here we discuss the main concepts and definitions,
 but for those interested in reading more about the use of DNNs in audio processing and MIR related tasks, we suggest them to take a look at works like McFee {cite}`McFee2018`, Purwins et al. {cite}`purwins2019deep` and Choi et al. {cite}`choi2017tutorial`.
 
-**Sebastian do you have further suggestions for resources about DNNs for audio/MIR here**?
+The field moved quite fast these past years and the amount different design choices and approaches can be somehow overwhelming!
+We tried to come up with a way of summarizing the different moving parts of beat and downbeat deep learning systems to help
+digest this, as we explain below. 
 
 Recent beat and downbeat tracking approaches can be structured in three main stages: 1) A first stage of _low-level feature_ computation or _feature extraction_, where feature vectors that represent the content of musical audio are 
 extracted from the raw audio signal (e.g. Spectrogram, Chromagram); 2) A second step that usually consists of a stage of feature learning, whose outcome is an activation function that indicates the most likely candidates
 for beats and/or downbeats among the input audio observations; 3) Finally, a post-processing stage is often used, usually consisting of a probabilistic graphical model which encodes some relevant musical rules 
 to select the final beat/downbeat candidates.
 
-```{image} ../assets/ch3_going_deep/figs/diagram.png
+```{figure} ../assets/ch3_going_deep/figs/diagram.png
 ---
 alt: General pipeline commonly used for beat and/or downbeat tracking systems.
+---
+General pipeline commonly used for beat and/or downbeat tracking systems.
 ```
-
-
 
 
 Different alternatives were proposed for the distinct stages among beat and downbeat tracking systems. Here we give an overview of the main ideas 
@@ -32,6 +34,13 @@ beat positions are {cite}`degara2012reliability, krebs2013rhythmic, Holzapfel201
 The feature extraction is usually based on a single feature {cite}`papadopoulos2010joint, peeters2010simultaneous, zapata2014multi, Holzapfel2014, korzeniowski2014probabilistic, Krebs2015, ajay2015, Bock2014`, with some exceptions exploiting more than one music property at the same time {cite}`Durand2015, durand2016feature, Durand2017, Krebs2016,fuentes2018analysis, fuentes2019_structure, zapata2014multi`, which results in systems robust to different music genres {cite}`Durand2017`. 
 Recently, approaches based on deep learning exploring combinations of logarithmic spectrograms with different resolutions showed to perform competently {cite}`bock2016joint, korzeniowski2014probabilistic,bock2020deconstruct, bock2019multi`.
 
+```{figure} ../assets/ch3_going_deep/figs/features_example.png
+---
+alt: Example of features used for downbeat tracking.
+---
+Example of features, from left to right: melodic constant-Q transform, onset detection function, chromagram, low-frequency spectrogram. Adapted from {cite}`Durand2017`.
+```
+
 
 ## Likelihood estimation
 
@@ -43,11 +52,26 @@ The estimation of a likelihood with heuristics is performed differently dependin
 spectral-flux or chroma, and to measure the distance between this template to the features computed from the audio signal {cite}`peeters2010simultaneous, Nunes2015`. Within the group of 
 machine learning approaches, we could identify two subgroups: a first one that exploits "traditional" learning techniques and a second one with focus on deep learning models.
 
+```{figure} ../assets/ch3_going_deep/figs/rhythmic_patterns.png
+---
+alt: Example of rhythmic patter learning.
+---
+Example of rhythmic patter learning from {cite}`krebs2013rhythmic`.
+```
+
 Before deep learning, machine learning systems often focus on recognizing rhythm patterns in data, for instance by using _Gaussian Mixture Models_ (GMM) and k-means 
 {cite}`ajay2015, ajay2016, ajay2017, krebs2015inferring, krebs2013rhythmic, Holzapfel2014, Nunes2015`. This usually required making some assumptions of 
 style or genre (e.g. to define the length of the patterns to be learned), and for these models to be effective the music should have distinctive rhythmic patterns. 
 Deep learning approaches propose an alternative to such limitations given their capacity to learn complex function mappings, and systems exploiting DNNs have became the state of the art in
 recent years {cite}`jia2019deep`.  
+
+```{figure} ../assets/ch3_going_deep/figs/feature_extraction.png
+---
+alt: Example of likelihood estimation.
+---
+Different stages of feature extraction. Left: input spectrogram, middle: intermediate DNN outputs, right: the final beat and downbeat likelihoods. Adapted from {cite}`bock2016joint`.
+```
+
 
 ## Inference
  

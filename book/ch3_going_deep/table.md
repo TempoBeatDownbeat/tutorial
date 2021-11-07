@@ -1,18 +1,15 @@
-Reference works
-===============
+Table of reference works
+========================
 
 ```{note}
 This table is not exahustive. We did our best to compile relevant works in the past few years, but
 we welcome contributions to update this table with missing references or corrections. Please open 
-an issue in the main repository.
+an issue in the main repository!
 ```
 ```{tip}
 Definitions of the acronyms are at the bottom of this page.
 ```
 
-```{warning}
-This table needs further format, WIP
-```
 
 ```{list-table}
 :widths: 15 5 5 5 5 5 5 5
@@ -40,41 +37,41 @@ This table needs further format, WIP
   - 
   - ✅ 
   -  
-  - ??
-  - ??
-  - ??
+  - log-STFT
+  - TCN
+  - BPM
 * - Steinmetz {cite}`steinmetz2021wavebeat`
   - 2021
   - 
   - ✅ 
-  -  
-  - ??
-  - ??
-  - ??
+  - ✅ 
+  - waveform
+  - TCN
+  - DBN
 * - Böck {cite}`bock2020deconstruct`
   - 2020
   - ✅
   - ✅ 
   - ✅
-  - ??
-  - ??
-  - ??
+  - log-STFT
+  - TCN
+  - DBN
 * - Böck {cite}`bock2019multi`
   - 2019
   - ✅
   - ✅ 
   - 
-  - ??
-  - ??
-  - ??
+  - log-STFT
+  - TCN
+  - DBN
 * - Davies {cite}`matthewdavies2019temporal`
   - 2019
   - 
   - ✅ 
   - 
-  - ??
-  - ??
-  - ??
+  - log-STFT
+  - TCN
+  - DBN
 * - Fuentes {cite}`fuentes2019_microtiming`
   - 2019
   - 
@@ -334,8 +331,8 @@ This table needs further format, WIP
 - **HMMs:** Hidden Markov models
 - **GMMs:** Gaussian mixture models
 - **DBN:** Dynamic Bayesian network
-- **DNNs:**: Deep Neural Network (WHICH ONE????)  
-- **LFS:** ?????? (low frequency spectrogram???)  
+- **DNNs:**: Deep Neural Network
+- **LFS:** Low frequency spectrogram
 - **MAF:** Mel auditory feature
 - **MFCCs:** Mel frequency cepstral coefficients
 - **ODF:** onset detection function

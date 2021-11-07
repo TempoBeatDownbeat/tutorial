@@ -40,7 +40,7 @@ of python notebooks.
 all of the main practical code examples can be found 
 in the following Google Colab notebook:** 
 
-<span style="color:blue"> _include link here_</span>
+[`Colab link`](https://colab.research.google.com/drive/1tuOqNyO9gdMmYJsj33fP_QOfpRsm2tmt?usp=sharing)
 
 
 Desired outcomes
