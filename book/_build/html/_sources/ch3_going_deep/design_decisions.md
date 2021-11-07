@@ -44,7 +44,7 @@ dependencies which are inherent to finer granularities. On the other hand CRNNs 
 are able to extract information at different time scales. 
 
 ```{tip}
-The choice of the input granularity should match the architecture used. A simple approach is to use architectures that are more
+The choice of the input granularity should match the architecture used. A simple approach is to use architectures that are3 more
 robust to different granularities and not worry about it (see above).
 ```   
 

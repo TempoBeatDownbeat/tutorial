@@ -17,58 +17,6 @@ you can either click on the next section on the tutorial's table of contents on
 the left-hand side, or you can scroll to the bottom of the page to click the 
 button on the bottom right to go to the next section.
 
-### This Book is Interactive
-
-Most of the material presented here is written in the `python3` programming language.
-It is presented in the [Jupyter Notebook](https://jupyter.org/) format,
-which allows us to interweave the lecture material with the code interactively.
-[Click here](https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html)
-for a quick guide on how to use Jupyter Notebooks.
-
-
-However, the main practical examples in "Going Deeper" chapter are hosted directly
-on Google Colab rather than in the book. 
-To this end, we recommend following that link and working directly there.
-
-The chapter on the "Basics of tempo, beat, and downbeat" has runnable code, and has a
-rocket icon in the top right-hand corner, which can be run in MyBinder or locally
-by checking out the repository.
-
-```{note} 
-Not all content will be visible in the notebooks when you view them outside of
-this page. For instance, special sections on the website this "Notes" block,
-links to reference references or glossary terms, etc, will only work on the live
-website you are currently viewing.
-```
-
-
-#### MyBinder.org 
-
-**MyBinder.org (Binder)**
-
-To use `mybinder`, hover your mouse over
-the rocket icon and select "Binder" from the drop down menu and a populated
-Binder notebook will open in your browser.
-
-When you open a Binder, it will take you to a page that says `Starting repository: tempo-beat-downbeat/tutorial/master`.
-We have also usually the message `Your session is taking longer than usual to start!`.
-This is normal, as the Docker environment takes a long time to build.
-**Please expect to wait 10-30 minutes before the first time the Binder notebook launches!!**
-Binder does not offer access to GPUs.
-
-Once the Binder is launched, you may skip the first cell that installs the required
-packages and run the notebook material.
-
-<!-- 
-**Thebe**
-
-If you want to run the notebook cells without leaving this tutorial page, you
-can select "Thebe" from the drop down menu below the rocket icon at the top right
-of the web page. Thebe runs Binder in the background, so expect it to be it to be
-as slow as Binder.
- -->
-
-
 
 ### Running Locally
 
