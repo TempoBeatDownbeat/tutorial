@@ -43,9 +43,6 @@ If you choose to run locally, here are the recommended steps:
 1) Clone the [github repo](https://github.com/TempoBeatDownbeat/tutorial) into a 
    new directory.
 2) Make a new conda environment.
-    - If you want to install using the included `environment.yml` file see the
-  ([instructions here](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file)).
-  Then activate your environment.
     - If you want to install using `pip`, activate your environment and the
   run `pip install -r requirements.txt`. Note that you should have `ffmpeg` installed
   prior to installing the requirements ([instructions here](https://ffmpeg.org/download.html)).

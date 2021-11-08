@@ -40,7 +40,10 @@ of python notebooks.
 all of the main practical code examples can be found 
 in the following Google Colab notebook:** 
 
-<a href="https://colab.research.google.com/drive/1tuOqNyO9gdMmYJsj33fP_QOfpRsm2tmt?usp=sharing" target="_blank">Colab link</a>
+
+[![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1tuOqNyO9gdMmYJsj33fP_QOfpRsm2tmt?usp=sharing)
+
+
 
 
 

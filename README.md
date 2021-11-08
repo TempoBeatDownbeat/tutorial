@@ -4,6 +4,12 @@
 
 Resources and Jupyter Book for the ISMIR 2021 tutorial on Tempo, Beat and Downbeat estimation.
 
+To jump directly to the hands on part:
+[![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1tuOqNyO9gdMmYJsj33fP_QOfpRsm2tmt?usp=sharing)
+
+To go directly to the book:
+https://tempobeatdownbeat.github.io/tutorial
+
 
 ### Install
 

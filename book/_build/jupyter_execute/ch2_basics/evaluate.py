@@ -30,7 +30,7 @@
 # is time-consuming and expensive (it requires real-time listening possibly multiple times).
 # It is also difficult to repeat in an exact way and to determine 
 # a set of unambiguous judging criteria. Note, since most people
-# only have "reletaive" rather than "perfect tempo" it's rather hard to 
+# only have "relative" rather than "perfect tempo" it's rather hard to 
 # design an subjective experiment for absolute tempo perception
 # without the instantion of the tempo in terms of beats. 
 # 
