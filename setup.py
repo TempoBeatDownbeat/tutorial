@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 USERNAME = 'magdalenafuentes'
-NAME = 'rhythm_tutorial'
+NAME = 'tutorial'
 
 with open('requirements.txt') as f:
     REQUIREMENTS = f.readlines()
@@ -19,5 +19,5 @@ setup(
     install_requires=open('requirements.txt').readlines(),
     extras_require={},
     keywords=['audio', 'beat', 'downbeat', 'music', 'tempo', 'ismir', 'tutorial'],
-    license='MIT',
+    license='CC BY-NC-SA 4.0',
 )
