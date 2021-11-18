@@ -18,7 +18,7 @@ We recommended you do this within a virtual environment:
 ```bash
 conda create -n beat python=3.8
 conda activate beat
-git clone git@github.com:magdalenafuentes/rhythm_tutorial.git
+git clone git@github.com:TempoBeatDownbeat/tutorial.git
 cd rhythm_tutorial/
 pip install -e .
 ```
