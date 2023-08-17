@@ -22,7 +22,7 @@ parts:
     - file: ch3_going_deep/design_decisions
     - file: ch3_going_deep/table
 
-  - caption: 'Going deeper: practial examples'
+  - caption: 'Going deeper: practical examples'
     chapters:
     - file: ch4_going_deeper/building_tcn_models
 
@@ -35,4 +35,3 @@ parts:
     - file: ch6_resources/references
     - file: ch6_resources/acknowledgments
     - file: ch6_resources/authors
-    
