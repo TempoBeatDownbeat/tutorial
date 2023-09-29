@@ -19,7 +19,7 @@ We recommended you do this within a virtual environment:
 conda create -n beat python=3.8
 conda activate beat
 git clone git@github.com:TempoBeatDownbeat/tutorial.git
-cd rhythm_tutorial/
+cd tutorial/
 pip install -e .
 ```
 
@@ -27,12 +27,9 @@ pip install -e .
 
 
 ```bash
-cd rhythm_tutorial/
+cd tutorial/
 jupyter-book clean book/  # to remove any existing builds
 jupyter-book build book/
 ```
 
 A fully-rendered HTML version of the book will be built in `book/_build/html/`.
-
-
-
